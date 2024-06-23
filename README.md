@@ -3,8 +3,8 @@
 creo que porfin he entendido cual es mi problema, voy para ser back pero no habia encontrado un lenguaje que realmente me llamara la atencion para back, le dare un poco de formato de back en con un poco de front responsive
 
 ## [X]Git y GitHub desde cero 
-### Todo code academy 
-necesito subir toidos los cursos, chuletas o conocimiento que tenga o que adquiera, para que esten de manera ordenada y se vea en mi github que siempre estoy subiendo algo, por ende siempre tengo que subir algo en mi github, siempre 
+### Todo code academy (añadido) 
+necesito subir toidos los cursos, chuletas o conocimiento que tenga o que adquiera, para que esten de manera ordenada y se vea en mi github que siempre estoy subiendo algo, por ende siempre tengo que subir algo en mi github, siempre
 
 ## [ ]Java
 ### Universidad Java 

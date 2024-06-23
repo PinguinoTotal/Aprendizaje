@@ -1,0 +1,36 @@
+.grid-container{
+    display: grid;
+    background-color: beige;
+    grid-template-columns: 150px auto 150px;
+    /*con el repeat repetimos la configuracion para el numero de 
+    filas o columnas que estemos diciendo*/
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+.grid-container > *{
+    background-color: brown;
+    border: 1px solid black;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header, footer{
+    grid-column: 1 / span 3;
+}
+
+/*haciendo un mediaquery para pantallas menores a 600*/
+@media all and (max-width: 600px) {
+    .grid-container{
+        grid-template-rows: repeat(5, 200px);
+    }
+
+    aside,article{
+        grid-column: 1/ span 3;
+    }
+    
+}

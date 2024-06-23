@@ -1,0 +1,16 @@
+.grid-container{
+    display: grid;
+    background-color: cadetblue;
+    grid-template-columns: auto 40px auto;
+    grid-template-rows: auto 100px;
+    /*separar 10px entre columnas*/
+    column-gap: 10px;
+    /*separar 20px entre filas*/
+    row-gap: 20px;
+    
+}
+
+.grid-container div{
+    background-color: chocolate;
+    border: 1px solid black;
+}

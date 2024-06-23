@@ -1,0 +1,22 @@
+.grid-container{
+    display: grid;
+    background-color: darkgray;
+    gap: 10px;
+    /*rellenar con las columans que haga falta tomando el parametro 
+    minimo y maximo
+    
+    mete todas las columnas que puedas siempre que cumplan el criterio*/
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid-container > div{
+    background-color: darkolivegreen;
+    border: 5px solid black;
+    color: white;
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+

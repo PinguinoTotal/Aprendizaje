@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario servlet</title>
+  </head>
+  <body>
+    <h1>Formulario servlet</h1>
+
+    <!--aqui ponemos el nombre de nuestra apliacuion y el nombre de 
+    nuestro servlet
+    utilizamos el metodo post ya que por default esta en get y esto se vera
+    en el url cuando se mande la informacion
+    -->
+    <form name="form1" action="/ManejoParametros/Servlet" method="post">
+        <!--el metodo post va a mandar 2 parametros, el usuario y el 
+        password, estos van a ser reconocidos por el "name"-->
+        Usuario: <input type="text" name="usuario">
+        <br>
+        Password: <input type="password" name="password">
+        <br>
+        <input type="submit" value="Enviar">
+
+    </form>
+  </body>
+</html>

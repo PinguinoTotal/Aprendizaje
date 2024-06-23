@@ -1,0 +1,27 @@
+h1 {
+  color: blue;
+}
+p {
+  color: white;
+  background-color: crimson;
+  /*Comentarios */
+  /*Tambien todos tienen border left, margin top, padding right
+  y asi */
+  /*Padding*/
+  padding: 15px;
+  /*Border*/
+  border:  10px solid powderblue;
+  /*Margen*/
+  margin: 50px;
+  /*arriba, derecha, abajo, izquierda*/
+  margin: 40px 10px 20px 10px;
+  /*arriba abajo, derecha izquierda*/
+  margin: 40px 10px;
+
+  /*centrando las cajas*/
+  margin: auto 50px;
+  /*centrando el texto de las cajas*/
+  text-align: center;
+
+  /*las paletas de colores son importantes*/
+}

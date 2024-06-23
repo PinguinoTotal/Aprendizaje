@@ -1,0 +1,5 @@
+mx\com\gm\sga\servicio\PersobaServiceImpl.class
+SGAJEE.class
+mx\com\gm\sga\servicio\PersonaServiceRemote.class
+mx\com\gm\sga\cliente\ClinetePersonaService.class
+mx\com\gm\sga\domain\Persona.class

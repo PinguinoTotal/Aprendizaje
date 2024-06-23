@@ -1,0 +1,44 @@
+ul{
+  /*iconos de las listas*/
+  list-style-type: none;
+  background-color: #437b9d;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  float: left;
+  
+}
+ul li a{
+  display: block;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+
+ul li a:hover{
+  background-color: #26475c;
+}
+
+ol{
+  list-style: none;
+  /*creamos un contador y lo reseteamos cada que aparezaca un ol*/
+  counter-reset: contador;
+}
+
+ol li{
+  /*incrementamos el contador*/
+  counter-increment: contador;
+}
+
+ol li::before{
+  /*le ponermos esto antes de cada li*/
+  content: 'Curso ' counter(contador) ' : ';
+  color: orange;
+}
+
+ol li::after{
+  /*le ponemos esto despues de cada li */
+  content: '.';
+}

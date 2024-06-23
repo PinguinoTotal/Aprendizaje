@@ -1,0 +1,52 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+    background-image: linear-gradient(to bottom, #7209b7, #3f37c0);
+    height: 100vh;
+    color: white;
+}
+
+#caja{
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 60px;
+  background-color: rgba(0,0,0, .5);
+  padding: 40px;
+  border-radius: 15px;
+}
+
+#caja h1{
+  color: #4cc9f0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#caja .word{
+  margin-bottom: px;
+}
+
+input[type="text"],
+input[type="password"]{
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid white;
+  width: 100%;
+  margin-bottom: 30px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+}
+
+input[type="submit"]{
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+  background-color: #f72585;
+  border: none;
+  color: white;
+  letter-spacing: 3px;
+  cursor: pointer;
+}

@@ -6,7 +6,7 @@ creo que porfin he entendido cual es mi problema, voy para ser back pero no habi
 ### Todo code academy (añadido) 
 necesito subir toidos los cursos, chuletas o conocimiento que tenga o que adquiera, para que esten de manera ordenada y se vea en mi github que siempre estoy subiendo algo, por ende siempre tengo que subir algo en mi github, siempre
 
-## [ ]Java
+## [X]Java
 ### Universidad Java 
 esto ya lo he visto, quiza lo mejor sea subir lo que ya tengo en mis archivos a github para no perder lo que ya tenia, sin embargo creo que esta un poco enrredado con las enseñanzas que dio el profe, asi que pueed que despues limpie lo que esta aqui o solo haga otro curso más pequeño de java 
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <header>
+    <h3>Presupuesto Disponible:</h3>
+
+    <h1 id="presupuestoValor">$800.00</h1>
+
+    <div id="ingresosEgresosHeader">
+
+      <div id="ingresosTotalesBox" class="totales">
+        <div class="ingresosEgresosHeaderText">Ingresos</div>
+        <div id="ingresoGeneral">$ 2,100.00 <div class="porcentajeVacio"></div></div>
+      </div>
+
+      <div id="egresosTotalesBox" class="totales">
+        <div class="ingresosEgresosHeaderText">Egresos</div>
+        <div id="egresoGeneral">- $ 1,300.00<div class="porcentaje">61.90%</div></div>
+      </div>
+
+    </div>
+    
+  </header>
+
+  <div id="agregar">
+
+    <select id="sumaResta" name="iOe" class="elementoAgregar">
+      <option value="ingreso">+</option>
+      <option value="egreso">-</option>
+    </select>
+
+    <input id="conceptoAgregar" type="text" class="elementoAgregar" placeholder="Nuevo Concepto">
+
+    <input id="valorNumero" type="number" class="elementoAgregar" name="valorNumero" placeholder="100">
+
+    <button id="botonAgregar" class="elementoAgregar textoVerde"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
+  
+  </div>
+
+  <div id="cajaIngresoEgreso">
+
+    <div class="cuerpo">
+      <h3 id="cajaIngresoText" class="textoVerde">INGRESOS</h3>
+      <div id="listaIngresos">
+
+        <!--aqui van los elementos que se ponen atraves de javascript
+        de tipo ingreso-->
+
+      </div>
+    </div>
+
+    <div class="cuerpo">
+      <h3 id="cajaEgresoText" class="textoRojo">EGRESOS</h3>
+      <div id="listaEgresos">
+
+        <!--aqui van los elementos que se ponen atraves de javascript
+        de tipo egreso-->
+
+      </div>
+  </div>
+
+
+  <!--los datos que vamos a usar-->
+  <script src="js/Dato.js"></script>
+  <script src="js/Ingeso.js"></script>
+  <script src="js/Egreso.js"></script>
+  <!--main de la pagina-->
+  <script src="js/app.js"></script>
+  <!--haciendo el link para que funcionen los iconos-->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

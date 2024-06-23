@@ -2,66 +2,66 @@
 
 creo que porfin he entendido cual es mi problema, voy para ser back pero no habia encontrado un lenguaje que realmente me llamara la atencion para back, le dare un poco de formato de back en con un poco de front responsive
 
-## Git y GitHub desde cero 
+## [X]Git y GitHub desde cero 
 ### Todo code academy 
 necesito subir toidos los cursos, chuletas o conocimiento que tenga o que adquiera, para que esten de manera ordenada y se vea en mi github que siempre estoy subiendo algo, por ende siempre tengo que subir algo en mi github, siempre 
 
-## Java
+## [ ]Java
 ### Universidad Java 
 esto ya lo he visto, quiza lo mejor sea subir lo que ya tengo en mis archivos a github para no perder lo que ya tenia, sin embargo creo que esta un poco enrredado con las enseñanzas que dio el profe, asi que pueed que despues limpie lo que esta aqui o solo haga otro curso más pequeño de java 
 
-## Java Web con JSP y JPA
+## [ ]Java Web con JSP y JPA
 ### TodoCode academy
 esto es para pdoer entender bien las bases de las APIs echas con java, tambien sabiendo que esto necesita bases de datos SQL que ya tome un cursod e eso en la todocode academy 
 
-## APIs en Java con Spring Boot
+## [ ]APIs en Java con Spring Boot
 ### TodoCode academy
 esto es para poder hacer apis que puedan ser consumidas por el font, siempre he tenido el problema de no saber porque estoy haciendo lás cosas y ahora que lo se puedo tener un panorama más amplio y saber para que lo estoy haciendo, osease saber para que estoy haciendo el front y pensar como diseñar la api que el front debe consumir
 
-## *Spring Security 
+## [ ]*Spring Security 
 ### TodoCode academy
 este es para hacer que mi back tenga seguridad, sin embargo esto es un poco más complicado ya que no tengo este curso, este puede esperara y hacerlo cuando pueda
 
-## *Microservicios con Spring Cloud 
+## [ ]*Microservicios con Spring Cloud 
 ### TodoCode academy 
 al igual que el Spring security este pueed esperar ya que no tengo el curso y este puede esperar
 
-## HTML Y CSS
+## [ ]HTML Y CSS
 ### visto 
 esto ya lo se, solo necesito un poco más de practica que obtendre de maquetar webs
 
-## CSS GRID 
+## [ ]CSS GRID 
 ### pendiiente 
 esto debo aprenderlo para hacer responsives las webs que este maquetando 
 
-## CSS Flexbox
+## [ ]CSS Flexbox
 ### pendiiente 
 esto debo aprenderlo para hacer responsives las webs que este maquetando 
 
-## JavaScript TypeScript
+## [ ]JavaScript TypeScript
 ### Udemy
 tengo el curso y necesito aprender bien el lenguaje de front para poder consumir de una manera optima las apis
 
-## Angular
+## [ ]Angular
 ### pendiente
 al aprender angular con css grid flexbox, javascript y tyspcript pode hacer cualquier front responsive sabiendo consumir mis apis
 
 
-## Aprender a conectar Angular con Spring
+## [ ]Aprender a conectar Angular con Spring
 ### pendiente
 en este punto supongo que ya sabre como hacer para que se conecten porque es back y front 
 
-## **Hacer deploy
+## [ ]**Hacer deploy
 ### pendiente
 esto es para poder colocar mis proyectos en la web, pero es importante, no se en que mopmento lo utilizare o lo aprendere asi que lo puse la final pero peude cambiar en su hora de aprenderlo
 
-## en este punto ya debo teenr mi portafolio y 3 proyectos personales corriendo
+## en este punto ya debo tener mi portafolio y 3 proyectos personales corriendo
 
-## NodeJS
+## [ ]NodeJS
 ### Udemy
 si no esta jalando mucho lo de encontrar trabajo aprender nuevos lenguajes de back puede que em ayude 
 
-## Python y Django
+## [ ]Python y Django
 ### Udemy
 lo mismo que Node JS pero minimo node no tengo que reaprender toda su sintaxis 
 

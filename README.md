@@ -10,6 +10,53 @@ necesito subir toidos los cursos, chuletas o conocimiento que tenga o que adquie
 ### Universidad Java 
 esto ya lo he visto, quiza lo mejor sea subir lo que ya tengo en mis archivos a github para no perder lo que ya tenia, sin embargo creo que esta un poco enrredado con las enseñanzas que dio el profe, asi que pueed que despues limpie lo que esta aqui o solo haga otro curso más pequeño de java 
 
+## [X]HTML Y CSS
+### visto 
+esto ya lo se, solo necesito un poco más de practica que obtendre de maquetar webs
+
+## (actualizacion) 23/06/2024
+llegue en un punto en donde en el curso de JSP y JPA se "hace" un front con una plantilla, pero quisiera hacerla responsive, con lo que yo sepa asi que dejare un poco aparcado el curso de Java Web cpn JSP y JPA para poder hacer los de grid css y flexbox css para que las plantillas que ocupe de ahora en adelante puedan ser echas por mi 
+### Distribucion de cursos antes
+<ul>
+    <li>[X]Git y GitHub desde cero </li>
+    <li>[X]Java </li>
+    <li>[X]HTML Y CSS </li>
+    <li>[ ]Java Web con JSP y JPA </li>
+    <li>[ ]APIs en Java con Spring Boot </li>
+    <li>[ ]*Spring Security  </li>
+    <li>[ ]*Microservicios con Spring Cloud  </li>
+    <li>[ ]CSS GRID  </li>
+    <li>[ ]CSS Flexbox </li>
+    <li>[ ]JavaScript TypeScript </li>
+    <li>[ ]Angular </li>
+    <li>[ ]Aprender a conectar Angular con Spring </li>
+</ul>
+
+### Distribucion de cursos ahora
+<ul>
+    <li>[X]Git y GitHub desde cero </li>
+    <li>[X]Java </li>
+    <li>[X]HTML Y CSS </li>
+    <li>[ ]CSS GRID  </li>
+    <li>[ ]CSS Flexbox </li>
+    <li>[ ]Java Web con JSP y JPA </li>
+    <li>[ ]APIs en Java con Spring Boot </li>
+    <li>[ ]*Spring Security  </li>
+    <li>[ ]*Microservicios con Spring Cloud  </li>
+    <li>[ ]JavaScript TypeScript </li>
+    <li>[ ]Angular </li>
+    <li>[ ]Aprender a conectar Angular con Spring </li>
+
+</ul>
+
+## [ ]CSS GRID 
+### pendiiente 
+esto debo aprenderlo para hacer responsives las webs que este maquetando 
+
+## [ ]CSS Flexbox
+### pendiiente 
+esto debo aprenderlo para hacer responsives las webs que este maquetando 
+
 ## [ ]Java Web con JSP y JPA
 ### TodoCode academy
 esto es para pdoer entender bien las bases de las APIs echas con java, tambien sabiendo que esto necesita bases de datos SQL que ya tome un cursod e eso en la todocode academy 
@@ -26,18 +73,6 @@ este es para hacer que mi back tenga seguridad, sin embargo esto es un poco más
 ### TodoCode academy 
 al igual que el Spring security este pueed esperar ya que no tengo el curso y este puede esperar
 
-## [ ]HTML Y CSS
-### visto 
-esto ya lo se, solo necesito un poco más de practica que obtendre de maquetar webs
-
-## [ ]CSS GRID 
-### pendiiente 
-esto debo aprenderlo para hacer responsives las webs que este maquetando 
-
-## [ ]CSS Flexbox
-### pendiiente 
-esto debo aprenderlo para hacer responsives las webs que este maquetando 
-
 ## [ ]JavaScript TypeScript
 ### Udemy
 tengo el curso y necesito aprender bien el lenguaje de front para poder consumir de una manera optima las apis
@@ -45,7 +80,6 @@ tengo el curso y necesito aprender bien el lenguaje de front para poder consumir
 ## [ ]Angular
 ### pendiente
 al aprender angular con css grid flexbox, javascript y tyspcript pode hacer cualquier front responsive sabiendo consumir mis apis
-
 
 ## [ ]Aprender a conectar Angular con Spring
 ### pendiente

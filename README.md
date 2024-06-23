@@ -50,11 +50,11 @@ llegue en un punto en donde en el curso de JSP y JPA se "hace" un front con una 
 </ul>
 
 ## [ ]CSS GRID 
-### pendiiente 
+### Youtube con kiko palomares [CSS GRID LAYOUT CURSO](https://www.youtube.com/watch?v=uMLNwUDag2o&list=PLnunbwZjHqMOyP4D8eTwuCmEXHIrM0Euf)
 esto debo aprenderlo para hacer responsives las webs que este maquetando 
 
 ## [ ]CSS Flexbox
-### pendiiente 
+### pendiente 
 esto debo aprenderlo para hacer responsives las webs que este maquetando 
 
 ## [ ]Java Web con JSP y JPA

@@ -72,7 +72,7 @@ git branch -m ramaCambio ramaNueva
 
 cambiar de rama en la cual estoy parado
 ~~~
-git cjecout nombreDeLaNuevaRama
+git checkcout nombreDeLaNuevaRama
 ~~~
 
 eliminar rama 

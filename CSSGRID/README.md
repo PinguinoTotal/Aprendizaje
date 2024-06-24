@@ -1,4 +1,8 @@
 # CSS GRID LAYOUT 
+
+DISCLAIMER:
+DESPUES DE COMPLETAR ESTE MINI CURSO CREI QUE NO ESTABA COMPLETAMENTE LISTO PARA HACER PAGINAS RESPONSIVE, YA QUE ESTE MINI CURSO NO ESTABA ENFOCADO A ESTO Y COMO YA TENIA EL CURSO DE (Master en CSS3 Avanzado: Maqueta 3 sitios web profesionales) ENTONCES DECIDI HACERLO PARA TENER BUENAS BASES DE CSS Y RESPONSIVE YA QUE SIENTO QUE EL CURSO VA UN POCO MÁS ENFOCADO EN ESTE, POR ENDE TAMPOCO ESTARA LA CARPETA DE FLEXBOX, PORQUE EL CURSO YA LO CONTEMPLA EN ALGUNA SECCION
+
 [css grid layout curso](https://www.youtube.com/watch?v=uMLNwUDag2o&list=PLnunbwZjHqMOyP4D8eTwuCmEXHIrM0Euf)
 
 El sistema de CSS grid layout ofrece un sistema de diseño basado en una cuadricula, con filas y columnnas, lo que facilita el diseño de paginas web sin tener que usar flotantes y posicionamiento

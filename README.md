@@ -49,9 +49,46 @@ llegue en un punto en donde en el curso de JSP y JPA se "hace" un front con una 
 
 </ul>
 
-## [ ]CSS GRID 
+## [X]CSS GRID 
 ### Youtube con kiko palomares [CSS GRID LAYOUT CURSO](https://www.youtube.com/watch?v=uMLNwUDag2o&list=PLnunbwZjHqMOyP4D8eTwuCmEXHIrM0Euf)
 esto debo aprenderlo para hacer responsives las webs que este maquetando 
+
+
+## actuliazacion 24/06/2024
+ya termine el mini curso de grid pero siento que debo practicar un poco más. ya tengo el curso de "Master en CSS3 Avanzado: Maqueta 3 sitios web profesionales" creo que puedo hacerlo y dar por terminada la parte de css html y javascript para el front, ya que tiene mucho responsive y eso es lo que me interesa asi que asi hare quitare el cursod e CSS Grid y pondre en curso de css completo, para ya poder terminar con jpa, pero dejare la carpeta de CSS GRID con un pequeño disclaimer en su Readme 
+
+### Distribucion de cursos antes
+<ul>
+    <li>[X]Git y GitHub desde cero </li>
+    <li>[X]Java </li>
+    <li>[X]HTML Y CSS </li>
+    <li>[X]CSS GRID  </li>
+    <li>[ ]CSS Flexbox </li>
+    <li>[ ]Java Web con JSP y JPA </li>
+    <li>[ ]APIs en Java con Spring Boot </li>
+    <li>[ ]*Spring Security  </li>
+    <li>[ ]*Microservicios con Spring Cloud  </li>
+    <li>[ ]JavaScript TypeScript </li>
+    <li>[ ]Angular </li>
+    <li>[ ]Aprender a conectar Angular con Spring </li>
+</ul>
+
+### Distribucion de cursos ahora
+<ul>
+    <li>[X]Git y GitHub desde cero </li>
+    <li>[X]Java </li>
+    <li>[X]HTML Y CSS </li>
+    <li>[ ]Master en CSS3 Avanzado: Maqueta 3 sitios web profesionales</li>
+    <li>[ ]Java Web con JSP y JPA </li>
+    <li>[ ]APIs en Java con Spring Boot </li>
+    <li>[ ]*Spring Security  </li>
+    <li>[ ]*Microservicios con Spring Cloud  </li>
+    <li>[ ]JavaScript TypeScript </li>
+    <li>[ ]Angular </li>
+    <li>[ ]Aprender a conectar Angular con Spring </li>
+</ul>
+
+
 
 ## [ ]CSS Flexbox
 ### pendiente 

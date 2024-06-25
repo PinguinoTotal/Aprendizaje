@@ -99,3 +99,14 @@ unir las ramas a la rama master, siempre que hacemos merge debemos estar parados
 ~~~
 git merge ramaOrigen ramaDestino
 ~~~
+
+eliminar una rama remota 
+[video](https://www.youtube.com/watch?v=_1IgkSx4pjQ)
+
+~~~
+git push origin --delete RamaAEliminar
+~~~
+
+ver todos los co
+
+

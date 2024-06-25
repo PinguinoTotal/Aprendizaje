@@ -1,0 +1,54 @@
+/*
+BEM es una metodologia de trabajo de como nombrar elemenmtos
+BEM = Bloque Elemento Modificador
+
+se usa siempre CLASS no ID
+
+
+CLASS= aplicar estilos
+ID= aplicar funcionalidad (javascript)
+
+.bloque 
+.bloque__elemento
+.bloque__elemento--modificador
+
+1. No usar ID
+2. No usar etiquetas
+3. Que todo sea un key selector (seleccionar justo el elemento alk cual se le daran especificaciones) 
+*/
+
+.cards{
+    /*orden de como poner los elementos*/
+    /*tamaño*/
+    width: 400px;
+    /*margenes*/
+    margin: 10px auto;
+    padding: 10px;
+    /*bordes*/
+    border: 1px solid gray;
+    box-shadow: 0px 0px 20px gray;
+    border-radius: 5px;
+}
+
+.cards__card{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue;
+}
+
+.card__title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card__link{
+    padding: 10px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+
+.card__link--rojo{
+    background-color: red;
+}

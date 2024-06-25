@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BEM en CSS</title>
+</head>
+<body>
+    <h1>Metodologia BEM</h1>
+
+    <section class="cards">
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 1</h3>
+            <p class="card_content">Contenido Tarjeta 1
+                <!--Tiene más logica que lo llamemos card__readmore
+                a llamarlo content_readmore porque no cambia demasiado 
+                en donde se encuentra y es más entendible-->
+                <span class="card__readmore">leer más</span>
+            </p>
+            <a href="#" class="card__link">victorRoblesweb.es</a>
+        </article>
+
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 2</h3>
+            <p class="card_content">Contenido Tarjeta 2</p>
+            <a href="#" class="card__link card__link--rojo">victorRoblesweb.es</a>
+        </article>
+
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 3</h3>
+            <p class="card_content">Contenido Tarjeta 3</p>
+            <a href="#" class="card__link">victorRoblesweb.es</a>
+        </article>
+
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 4</h3>
+            <p class="card_content">Contenido Tarjeta 4</p>
+            <a href="#" class="card__link">victorRoblesweb.es</a>
+        </article>
+    </section>
+</body>
+</html>

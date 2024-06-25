@@ -430,35 +430,263 @@ style.css
 }
 ~~~
 
-## 8.-
+## 8, 9.- Repaso Javascript
+index.html
+~~~ html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    
+    <div id="container">
+        Hola
+    </div>
+
+    <div id="caja2">
+
+    </div>
+
+    <script src="main.js"></script>
+</html>
 ~~~
- 
+
+style.css
+~~~js
+alert("Hola como estas");
+
+//variables
+let miVariable = "Hola";
+
+//haciendo constantes
+const altura = 175;
+
+//concatenacion 
+let concatenacion = miVariable + " " + altura;
+
+let container_box = document.querySelector("#container");
+
+container_box.innerHTML = `
+<h1>Hola soy la caja de datos</h1>
+<h2>Mi altura es: ${altura}</h2>`;
+
+//condicionales if
+
+if (altura <= 185) {
+    console.log("eres una persona bajita");
+}else{
+    console.log("eres una persona alta");
+}
+
+//bucles
+for (let index = 0; index < 200; index++) {
+    console.log(index); 
+}
+
+//arrays
+let nombre = ["victor", "pepe", "armando"];
+
+//añadiendo 
+nombre.push("martin");
+
+nombre.forEach(nom => {
+    console.log(nom);
+});
+
+//Funciones 
+const miInformacion = (nombre, altura) =>{
+    let misDatos = `
+    <h1>Soy la caja de datos</h1>
+    <h2>Mi nombre es: ${nombre}</h2>
+    <h3>Mi altura es: ${altura}</h3>
+    `
+
+    return misDatos;
+}
+
+let caja2 = document.querySelector("#caja2");
+caja2.innerHTML = miInformacion("ramon", 175);
+
+//mostrar por consola
+console.log(miVariable);
+console.log(concatenacion);
 ~~~
-## 9.-
+
+## 11, 12.- Aprendiendo BEM en css
+index.html
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BEM en CSS</title>
+</head>
+<body>
+    <h1>Metodologia BEM</h1>
+
+    <section class="cards">
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 1</h3>
+            <p class="card_content">Contenido Tarjeta 1
+                <!--Tiene más logica que lo llamemos card__readmore
+                a llamarlo content_readmore porque no cambia demasiado 
+                en donde se encuentra y es más entendible-->
+                <span class="card__readmore">leer más</span>
+            </p>
+            <a href="#" class="card__link">victorRoblesweb.es</a>
+        </article>
+
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 2</h3>
+            <p class="card_content">Contenido Tarjeta 2</p>
+            <a href="#" class="card__link card__link--rojo">victorRoblesweb.es</a>
+        </article>
+
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 3</h3>
+            <p class="card_content">Contenido Tarjeta 3</p>
+            <a href="#" class="card__link">victorRoblesweb.es</a>
+        </article>
+
+        <article class="cards__card">
+            <h3 class="card__title">Tarjeta 4</h3>
+            <p class="card_content">Contenido Tarjeta 4</p>
+            <a href="#" class="card__link">victorRoblesweb.es</a>
+        </article>
+    </section>
+</body>
+</html>
 ~~~
- 
+
+style.css
+~~~ css
+/*
+BEM es una metodologia de trabajo de como nombrar elemenmtos
+BEM = Bloque Elemento Modificador
+
+se usa siempre CLASS no ID
+
+
+CLASS= aplicar estilos
+ID= aplicar funcionalidad (javascript)
+
+.bloque 
+.bloque__elemento
+.bloque__elemento--modificador
+
+1. No usar ID
+2. No usar etiquetas
+3. Que todo sea un key selector (seleccionar justo el elemento alk cual se le daran especificaciones) 
+*/
+
+.cards{
+    /*orden de como poner los elementos*/
+    /*tamaño*/
+    width: 400px;
+    /*margenes*/
+    margin: 10px auto;
+    padding: 10px;
+    /*bordes*/
+    border: 1px solid gray;
+    box-shadow: 0px 0px 20px gray;
+    border-radius: 5px;
+}
+
+.cards__card{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue;
+}
+
+.card__title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card__link{
+    padding: 10px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+
+.card__link--rojo{
+    background-color: red;
+}
 ~~~
-## 10.-
-~~~
- 
-~~~
-## 11.-
-~~~
- 
-~~~
-## 12.-
-~~~
- 
-~~~
+
 ## 13.-
+style.css
+~~~ css
+/*aqui se deben poner las variables*/
+/*representa la raiz del documento*/
+:root{
+    --mi-Variable: #ccc;
+    --fuente: Arial, Verdana;
+    --fuente-size: 45px;
+}
+
+h1{
+    background-color: var(--mi-Variable);
+}
 ~~~
- 
+## 14.- Que es boxSizing
+index.html
+~~~ html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Box Sizing con Victor Robles</h1>
+    
+    <div class="caja">
+        <h2>Soy una caja</h2>
+        <p>Soy el contenido</p>
+    </div>
+</body>
+</html>
 ~~~
-## 14.-
+
+style.css
+~~~ css
+.caja{
+    font-family: 'Courier New', Courier, monospace;
+    /*el border box nos sirve para que respete el height siempre
+    aplicando los demas paddings sin alterar el tamaño de la caja*/
+    box-sizing: border-box;
+    width: 300px;
+    height: 180px;
+    margin: 30px auto;
+    padding: 50px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+}
 ~~~
- 
-~~~
-## 15.-
+
+## 15.- Unidades de medida
+existen unidades de medida fijas y relativas, las relativas se adaptan a las pantallas y son las que se deberian ocupar
+
+![medidas](/Readme_files/medidas.png "unidades de medida")
+
+-los pixeles **px** siempre son fijas, no son lo me
 ~~~
  
 ~~~

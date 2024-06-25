@@ -1,0 +1,11 @@
+/*aqui se deben poner las variables*/
+/*representa la raiz del documento*/
+:root{
+    --mi-Variable: #ccc;
+    --fuente: Arial, Verdana;
+    --fuente-size: 45px;
+}
+
+h1{
+    background-color: var(--mi-Variable);
+}

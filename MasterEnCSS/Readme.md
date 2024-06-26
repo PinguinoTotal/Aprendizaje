@@ -681,51 +681,19 @@ style.css
 }
 ~~~
 
-## 15.- Unidades de medida
+## 15, 16, 17, 18.- Unidades de medida
 existen unidades de medida fijas y relativas, las relativas se adaptan a las pantallas y son las que se deberian ocupar
 
-![medidas](/Readme_files/medidas.png "unidades de medida")
+[web de donde saque las medidas](https://victorroblesweb.es/2022/09/08/px-vs-rem-vs-em-unidades-de-medida-en-css/)
 
--los pixeles **px** siempre son fijas, no son lo me
-~~~
- 
-~~~
-## 16.-
-~~~
- 
-~~~
-## 17.-
-~~~
- 
-~~~
-## 18.-
-~~~
- 
-~~~
-## 19.-
-~~~
- 
-~~~
-## 20.-
-~~~
- 
-~~~
-## 21.-
-~~~
- 
-~~~
-## 22.-
-~~~
- 
-~~~
-## 23.-
+![medidas](Readme_files/medidas.png "unidades de medida")
+
 ~~~
  
 ~~~
 ## 24.-
-~~~
- 
-~~~
+
+cargando las fuentes a el proyecto
 ## 25.-
 ~~~
  

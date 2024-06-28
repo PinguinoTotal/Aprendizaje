@@ -280,3 +280,66 @@ sin ser puesto en el html*/
     
 }
 
+/*SOBRE MI */
+.about__header{
+    margin-bottom: 4.5rem;
+}
+
+.about__title{
+    font-size: 3.2rem;
+    position: relative;
+}
+
+.title__color{
+    color: var(--color-secondary);
+}
+
+.about__personal-info{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 5rem;
+}
+
+.personal-info__bio{
+    width: 56%;
+}
+
+.personal-info__description{
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+}
+
+
+.personal-info__data{
+    width: 44%;
+    padding: 0 1.5rem;
+}
+
+.personal-info__option{
+    margin-bottom: 1rem;
+}
+
+.personal-info__title{
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.services__title{
+    margin-bottom: 3rem;
+}
+
+.services__container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 5rem;
+}
+
+.service__image{
+    font-size: 3rem;
+    color: var(--color-secondary);
+}
+
+
+

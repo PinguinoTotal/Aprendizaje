@@ -1,10 +1,27 @@
-<h3>Estoy aprendiendo Angular de manera muy sencilla</h3>
-<p>hola-componente works!</p>
+<div class="card">
+    <h2>Eventos locales</h2>
+    <button (click)="accionBtn()">Ejecutar</button>
+    <h3>Cantidad de ejecuciones: {{cantidadDeEjecuciones}}</h3>
+    <h2>Cantidad de pasos</h2>
+    <h3 CambiarColor>Pasos dados: {{cantidadPasosDeMouse}}</h3>
+    <div (mouseover)="aumentarPasos()" class="cardEditable">
+        <h2>Dar un paso</h2>
+    </div>
+</div>
 
-@if (edad>=18) {
-    <h3>Eres mayor de edad</h3>
-}@else {
-    <h3>Eres menor de edad</h3>
-}
+<div class="card">
+    <app-calcular-promedio-salario [salarios]="listaSalarios" (promedioSalario)="recivirPromedio($event)"></app-calcular-promedio-salario>
+    <!--aplicamos cambiar color-->
+    <h3 CambiarColor>{{promedioSalarios}}</h3>
+</div>
+
+<div class="directivas">
+    <h1>Directivas</h1>
+    <!--aplicamos cambiar color-->
+    <h2 CambiarColor>Directiva 1</h2>
+    <!--aplicamos cambiar color pero con una variable-->
+    <h2 CambiarColor colorFondo="#a9a9a9">Directiva 2</h2>
+    <h2>Directiva 3</h2>
+</div>
 
 

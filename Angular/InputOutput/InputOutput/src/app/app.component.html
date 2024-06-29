@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="header__data">
+    <h2 class="data__header">Componente padre</h2>
+    <p class="data__info">Esto debe cambiar dependiendo de lo que manden los hijos</p>
+    <!--escuchamos el evento que vamos a lanzar desde los hijos-->
+    <p class="data__change">{{valorCambiante}}</p>
+  </div>
+  
+
+  <div class="hijos__container">
+    <app-children [valor]="valorDadoPorPadre" (valorAlPadre)="asignarValorMandadoPorElHijo($event)"></app-children>
+    <app-children valor="valor dado por html por el padre" (valorAlPadre)="asignarValorMandadoPorElHijo($event)"></app-children>
+    <app-children (valorAlPadre)="asignarValorMandadoPorElHijo($event)"></app-children>
+  </div>
+</div>

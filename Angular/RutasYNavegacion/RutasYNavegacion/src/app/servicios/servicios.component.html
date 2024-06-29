@@ -1,0 +1,28 @@
+<section>
+    <h2>Cursos</h2>
+    <ul>
+        @for (curso of almacenarCursos; track curso) {
+            <li>{{curso}}</li>
+        }
+    </ul>
+
+    <!--haciendo uso de la dependencia que le inyectamos a el codigo-->
+    <!-- este es usando el inyectable del servicio fuera del constructor haciendo que 
+    el servicio Curso sea publico y no privado como si lo llamaramos en el 
+    constructor
+    <p>Mi curso favorito es: {{servicioCursos.getCursosPorId(cursoId)}}</p>
+    
+    <label for="curso">
+        Ingrese un numero del 0 al 2
+        <input type="number" id="curos" [(ngModel)] = "cursoId">
+    </label>
+    -->
+
+    <p>Mi curso favorito es: {{referenciaAlServicio.getCursosPorId(cursoId)}}</p>
+    
+    <label for="curso">
+        Ingrese un numero del 0 al 2
+        <input type="number" id="curos" [(ngModel)] = "cursoId">
+    </label>
+
+</section>

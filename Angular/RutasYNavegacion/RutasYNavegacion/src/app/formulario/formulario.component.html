@@ -1,0 +1,28 @@
+<section>
+    <h2>Ejemplo Forms</h2>
+    <!--
+    <label for="framework">
+        Framework Favorito:
+        el ng model hace que se vea al isntante el cambio
+        ngModel esto es para fomrularios prqueños
+        para formularios mas serios y sostenibles en el tiempo se utiliza fomrularios reactivos
+        <input type="text" name="framework" id="framework" [(ngModel)] = "favoriteFramework"/>
+    </label>
+    -->
+    <form [formGroup]="formularioUusario" (ngSubmit)="subirFormulario()">
+        <!--con el formControlName le damos el nombre que tendra en en script
+        de formularioUusario-->
+        <input type="text" formControlName="nombre" placeholder="ingresa tu nomnbre">
+        <input type="email" formControlName="correo" placeholder="ingresa tu correo">
+        <!--apagamos el bton hasta que el formulario sea valido-->
+        <button type="submit" [disabled]="!formularioUusario.valid">Enviar</button>
+    </form>
+    
+    <div class="info__content">
+        <h2>Información ingresada</h2>
+        <!--y asi se accede a las variables que estamos tomando-->
+        <p class="info__params info__name">Nombre: {{formularioUusario.value.nombre}}</p>
+        <p class="info__params info__email">Correo: {{formularioUusario.value.correo}}</p>
+    </div>
+    
+</section>

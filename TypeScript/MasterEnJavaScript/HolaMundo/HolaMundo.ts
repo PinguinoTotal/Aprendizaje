@@ -21,4 +21,99 @@ let trampa2 : alfanumerico;
 //arrays
 var lenguajes: Array<string> = ["tengo", "que cuidar", "a mi casimerito"];
 
+//let y var son lo mismo
+
+function getNumero(numero: number = 12):string{
+    return "el numero es: " + numero;
+}
+
+//Decoradores 
+//les da una funcion extra a lo que queramos
+function estampar(logo: string){
+    return function(target: Function){
+        target.prototype.estampacion = function(): void{
+            console.log("camiseta estampada con el logo de: " + logo);
+        }
+    }
+    
+}
+
+//POO
+
+//Clase(molde del objeto)
+//se le pone export para que pueda ser importada por otro script
+//export class Camiseta{
+//el implements es que implementa una interface 
+
+class Camiseta implements CamisetaBase{
+    //Propidades
+    private color: string;
+    private modelo: string;
+    private precio: number;
+
+    constructor(color,modelo,precio){
+        this.color = color;
+        this.modelo = modelo;
+        this.precio = precio;
+    }
+
+    //Metodos
+    public setColor(color){
+        this.color = color;
+    }
+
+    public getColor():string{
+        return this.color;
+    }
+
+    public setModelo(modelo){
+        this.modelo = modelo;
+    }
+
+    public getModelo():string{
+        return this.modelo;
+    }
+
+    public setPrecio(precio){
+        this.precio = precio;
+    }
+
+    public getPrecio():number{
+        return this.precio;
+    }
+
+}
+
+
+//interfaces
+//es un contrato que siempre deben tener estos metodos
+interface CamisetaBase{
+    setColor(color);
+    getColor():string;
+}
+
+class Sudadera extends Camiseta implements SudaderaBase{
+    private talla:string;
+
+    constructor(color,modelo,precio, talla){
+        //con super pasamos los valores del padre
+        super(color,modelo,precio);
+        this.talla = talla;
+    }
+
+    setTalla(talla) {
+        this.talla = talla;
+    }
+    getTalla(): string {
+        return this.talla;
+    }
+
+
+}
+
+interface SudaderaBase{
+    setTalla(talla);
+    getTalla():string;
+}
+
 

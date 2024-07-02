@@ -107,6 +107,14 @@ eliminar una rama remota
 git push origin --delete RamaAEliminar
 ~~~
 
-ver todos los co
+cuando aparezca (END) se puede salir con la tecla q
 
+ver commits
+~~~
+git log
+~~~
 
+ver commits en solo una linea
+~~~
+git log --oneline
+~~~

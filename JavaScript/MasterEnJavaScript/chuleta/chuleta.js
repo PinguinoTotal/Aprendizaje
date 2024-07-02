@@ -41,8 +41,8 @@ if(true){
 
 
 //operadores lógicos || OR && AND
-
 //switch
+
 switch(edad){
     case 18:
 
@@ -51,7 +51,7 @@ switch(edad){
 
     break;
     default:
-
+    console.log("edad no valida");
     break;
 }
 

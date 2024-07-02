@@ -1,0 +1,167 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.textoRojo{
+  color: #D18576;
+}
+
+.textoVerde{
+  color: #70B6C0;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+header{
+  background: linear-gradient(to right, #EB342E, #6A5191);
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: .1px;
+}
+
+header h1,h3{
+  font-weight: normal;
+}
+
+header h3{
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+header h1{
+  margin: 30px;
+  font-size: 70px;
+}
+
+#ingresosEgresosHeader{
+  width: 450px;
+  margin: 0px auto;
+}
+
+#ingresosTotalesBox{
+  background-color: #1CAAB7;
+}
+
+#egresosTotalesBox{
+  background-color: #FF6046;
+}
+
+.totales{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.ingresosEgresosHeaderText{
+  text-transform: uppercase;
+}
+
+.porcentaje, .porcentajeVacio, .porcentajeEgreso{
+  width: 60px;
+  height: 20px;
+  float: right;
+  margin-left: 10px;
+  line-height: 20px;
+}
+.porcentaje, .porcentajeEgreso{
+  background-color: #FF816F;
+  font-size: 12px;
+  border-radius: 11px;;
+}
+
+.porcentajeEgreso{
+  background-color: #FFDED9;
+  text-align: center;
+}
+
+
+
+#agregar{
+  display: flex;
+  background-color: #F7F7F7;
+  height: 60px;
+  justify-content: center;
+}
+
+.elementoAgregar{
+  margin: 11px 8px;
+  border: 2px solid #f1f1f1a1;
+  border-radius: 5px;
+}
+
+#sumaResta{
+  width: 50px;
+  padding-left: 8px;
+}
+
+#conceptoAgregar{
+  width: 450px;
+}
+
+#valorNumero{
+  width: 100px;
+  
+}
+
+#botonAgregar{
+  background-color: transparent;
+  font-size: 30px;
+  margin-top: 16px;
+  border: none;
+}
+
+#cajaIngresoEgreso{
+  display: flex;
+  justify-content: center;
+}
+
+.cuerpo{
+  margin: 32px;
+  margin-top: 50px;
+}
+
+#cajaIngresoText, #cajaEgresoText{
+  border-bottom: 1px solid #e7dfdf;;
+  padding-bottom: 10px;
+}
+
+.elemento {
+  display: flex;
+  position: relative;
+  padding: 12px;
+  border-bottom: 1px solid #e7dfdf;;
+  font-size: 19px;
+  color: #848488;
+  width: 400px;
+  justify-content: space-between;
+  transition: all .3s;
+}
+
+.valor{
+  transition: all .3s;
+}
+
+
+
+.eliminar{
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  font-weight: bolder;
+  right: 10px;
+  display: inline-block;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.elemento:hover .eliminar{opacity: 1;}
+.elemento:hover .valor{
+  transform: translateX(-25px);
+}

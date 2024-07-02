@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<!--este metodo se pone para ver en que momento se carga el body 
+de la pagina -->
+<body onload="entrar()">
+  <h1 id="cabecero">Ejemplo DOM con javascript</h1>
+  <p class="parrafo">saludos</p>
+  <p class="parrafo">saludos</p>
+  <p class="parrafo">saludos</p>
+
+  <h2>Formulario</h2>
+  <form action="get" id="formulario">
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre" placeholder="escribe tu nombre"><br>
+
+    <label for="apellido">Apellido: </label>
+    <input type="text" name="apellido" id="apellido" placeholder="escribe tu apellido"><br>
+  </form>
+
+  <button onclick="mostrarValores()">Mostrar</button>
+
+  <div id="valores">
+
+  </div>
+
+  <h2>Cambiando imagenes</h2>
+  <img id="imagen" src="html5.png" alt="javascript">
+
+  <button onclick="cambioImagen()">Cambiar Imagen</button>
+
+  <h2>Eventos</h2>
+  <!--si se le pone on se pueden ver todos los eventos que se le pueden 
+  poner en el html-->
+  <h3 onclick="cambiarTexto(this)">link que se puede puchurrar</h3>
+
+  <h3 id="titulo3">Titulo que cambia desde javascript</h3>
+
+  <!--el script de javascript debe estar despues de los
+  eleemntos que queremos manipular-->
+  <script src="script.js"></script>
+
+  <h2>Evento Onchange</h2>
+  Nombre: <input type="text" name="nombre1" id="nombre1" onchange="convertir(this)">
+
+  <!--asi se ponemn los onmouse  cuando se pasa sobre el texto o sale del texto-->
+  <h2 onmouseover="funcionDeOnmouseOver()">OnmouseOver</h2>
+  <h2 onmouseout="funcionDeOnmouseOut()">OnmouseOut</h2>
+
+  <!--asi se ponemn los onmouse  cuando se da click y se levanta el click-->
+  <h2 onmousedown="funcionDeOnmouseDown()">OnmouseOver</h2> <!--cuando tenemos el mouse abajo-->
+  <h2 onmouseup="funcionDeOnmouseUp()">OnmouseOut</h2> <!--cuando levantamos el click-->
+  <h2 onclick="funcionDeonClick()">OnmouseOut</h2> <!--este se hace muy rapido, pero se hace-->
+
+  <!--cuando un evento pierde el focus se le pone el blur-->
+  <h2 onfocus="" onblur=""></h2>
+
+</body>
+</html>

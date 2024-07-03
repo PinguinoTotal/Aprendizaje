@@ -45,9 +45,19 @@ git push -u origin master
 es posible que nos pida un token(que no fue mi caso al momento de estar escribiendo este codigo), por ende es necesario hacerlo, dejo el video que explica como hacerlo:
 [generarToken](https://www.youtube.com/watch?v=2nzOI-ynXF4)
 
+saber que ramas tenemos en el repositorio remoto
+~~~
+git remote -v
+~~~
+
 para clonar un repositorio es: ir al repositorio que queremos clonar (el clone es copiar todo el repositorio para tenerlo desde 0) 
 ~~~
 git clone "url del repositorio que queremos clonar"
+~~~
+
+despues de clonar un repositorio a veces solo se copia la rama main y necesitamos otras rams por ende tambien hay que descargarlas, por ende localmentet debemos hacer una rama que se llame igual que la rama remota y luego descargarla desde el remote con:
+~~~
+git pull origin ramaRemota
 ~~~
 
 cuando estemos trabajando con alguien más y este hace un cambio y nos avisa, para actualizar el repo se hace con pull, master es la rama en la que estamos 
@@ -65,6 +75,10 @@ crear una nueva rama
 git branch nombreDeLaNuevaRama 
 ~~~
 
+crear nueva rama e inmediatamente movernos a esta 
+~~~
+git checkout -b nombreDeLaNuevaRama 
+~~~
 cambiar nombre de una rama
 ~~~
 git branch -m ramaCambio ramaNueva
@@ -118,3 +132,5 @@ ver commits en solo una linea
 ~~~
 git log --oneline
 ~~~
+
+

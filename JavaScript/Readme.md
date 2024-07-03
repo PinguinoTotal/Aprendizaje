@@ -143,8 +143,12 @@ function miFuncion(fruta1, fruta2, ...restoFrutas){}
 
 var frutilla=["manzana","pera"];
 
+//rest
 miFuncion(...frutilla);
 //así el valor de fruta1 es manzana y fruta 2 es pera
+
+//el rest expande lo que tenemos en los arrays
+console.log(...frutilla); //manzaana pera
 
 //funciones anonimas
 //las funciones anonimas solo no tienen nombres y se utilizan opara hacer callbacks

@@ -137,21 +137,141 @@ function getInfo() {
 }
 
 getInfo()
-//las promesas usan thens
-.then(items => console.log(items))
-//catch es para intentar capturar los errores de las promesas
-.catch(error => console.error(error.message))
-//finali siemrpe se utiliza al final de una promesa, lo ultimo que hace 
-.finally(()=> console.log("Promesa finalizada"))
+    //las promesas usan thens
+    .then(items => console.log(items))
+    //catch es para intentar capturar los errores de las promesas
+    .catch(error => console.error(error.message))
+    //finali siemrpe se utiliza al final de una promesa, lo ultimo que hace 
+    .finally(() => console.log("Promesa finalizada"))
 
 //el fetch es una peticion ajax  que devuelve promesas
 let pokeapi = fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-.then(response => response.json)
-.then(dito => console.log(dito));
+    .then(response => response.json)
+    .then(dito => console.log(dito));
 
 
 // hacer que las peticiones sean sincronas, que necesites esperar para que se haga algo más
-async function getMisInfos(){
+async function getMisInfos() {
     let misInfos = await getInfo();
     console.log(misInfos);
 }
+
+
+//clases con propiedades privadas
+class Carro {
+    //haciendo una propiedad privada
+    //con el # se hace privada
+    #_nPuertas = 0;
+    #_modelo = "";
+    #_nllantas = 0;
+    //si es con _ es protegida
+    _plazas = 0;
+    constructor(modelo, nllantas, npuertas) {
+        this.#_modelo = modelo;
+        this.#_nllantas = nllantas;
+        this.#_nPuertas = npuertas;
+    }
+
+    get modelo() {
+        return this.#_modelo;
+    }
+
+    set modelo(modelo){
+        this.#_modelo = modelo;
+    }
+
+    get nllantas(){
+        return this.#_nllantas;
+    }
+
+    set nllantas(nllantas){
+        this.#_nllantas = nllantas;
+    }
+
+    get nPuertas(){
+        return this.#_nPuertas
+    }
+
+    set nPuertas(nPuertas){
+        this.#_nPuertas = nPuertas;
+    }
+}
+
+var carro = new Carro("nisan", 4,4);
+console.log("el carro es: " + carro.modelo);
+
+//sets, estructura que almacena valores unicos de cualquier tipo
+//en este no puede haber valores duplicados
+let gadgets = new Set(["movil", "tablet", "portatil"]);
+console.log(gadgets);
+
+//metodos de los sets
+//agregar elementos
+gadgets.add(12);
+
+//tamaño del set 
+gadgets.size;
+
+//se recorre con un for in o foreach
+
+//eliminarlos
+gadgets.delete(12);
+
+//comprobar existencia
+gadgets.has("movil") //true;
+
+//eliminar todos los elementos del set
+gadgets.clear();
+
+//maps
+//estos siempre tienen clave y valor
+const gadgets1 = new Map();
+//en este se pueden repetir valores, pero no claves
+/*
+gadgets1.set(1,"PC");
+gadgets1.set(2,"TV");
+gadgets1.set(3,"TABLET");
+gadgets1.set("cuatro","Movil");
+gadgets1.set("cinco","Laptop");*/
+
+//tambien se pueed hacer esto:
+gadgets1.set(1,"PC")
+        .set(2,"TV")
+        .set(3,"TABLET")
+        .set("cuatro","Movil")
+        .set("cinco","Laptop");
+
+//sacar una variable
+console.log(gadgets.get("cinco"));
+
+const antiguos_gadgets = {
+    seis: "radiocaset",
+    siete: "compact dico",
+    ocho: "telefono sobremesa"
+};
+
+//volviendo un Json a un map 
+
+const gadgets2 = new Map(Object.entries(antiguos_gadgets));
+
+//nuevos metodos de array 
+
+let personas = ["victror", "paco", "pepe", "juan", "antonio"];
+
+//find 
+let busqueda = personas.find((persona) => persona === "pepe"); //regresa pepe
+
+//find index
+let busqueda1 = personas.findIndex(persona => persona === "juan"); //regresa el indice 
+//de donde encontro a juan 
+
+//crear array basandome en un obejto iterable 
+let array_leytras = Array.from("ahsjdlasjdlas");
+console.log(array_leytras)// a , h, s, j, ...
+
+//comprobar su existe un elemento dentro de un array 
+console.log(persona.includes("paco")); //true
+
+//filtarr array 
+let nuevas_personas = personas.filter(persona => persona.includes("a"));
+//solo guarda los nombre que tienen una a en el nombre 

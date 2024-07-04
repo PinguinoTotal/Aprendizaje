@@ -275,3 +275,42 @@ console.log(persona.includes("paco")); //true
 //filtarr array 
 let nuevas_personas = personas.filter(persona => persona.includes("a"));
 //solo guarda los nombre que tienen una a en el nombre 
+
+//objetos literales
+let titulo = "el señor de los anillos";
+let genero = "accion";
+let duracion = "2 horas";
+
+
+//esto e sun JSON 
+const pelicula = {
+    titulo,
+    genero,
+    duracion,
+    [genero+"2022"]: "hola",
+    //ahora se pueden hacer asi las funciones 
+    mostrar(){
+        return this.titulo + " " + this.genero;
+    }
+};
+
+Object.values(pelicula) //regresa un array con los valores que tiene el JSOn
+
+//novedades Ecmascript
+
+//Nullish ??
+function multiplicacion(numero1, numero2){
+    //numero1 existe o es diferente de null? si si, dale el valor de numero1, si no es 1 
+    numero1 = numero1 ?? 1;
+    //numero2 existe o es diferente de null? si si, dale el valor de numero2, si no es 1 
+    numero2 = numero2 ?? 1;
+
+    return numero1 * numero2
+}
+
+function mostrarUsuario(id, nombre){
+    // si (id+" "+nombre) existe o es diferente de null? si si
+    // dale el valor de (id+" "+nombre) , si no es "usuario desconocido"
+    let mi_usuario = (id+" "+nombre) ?? "usuario desconocido";
+    return mi_usuario;
+}

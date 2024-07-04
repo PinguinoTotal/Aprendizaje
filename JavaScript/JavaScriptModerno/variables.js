@@ -314,3 +314,25 @@ function mostrarUsuario(id, nombre){
     let mi_usuario = (id+" "+nombre) ?? "usuario desconocido";
     return mi_usuario;
 }
+
+//separadores numericos 
+let numero4 = 4_000_000_000; //esto sigue siendo un numero 
+//pero se lee mejor 
+
+//replace replace all
+let frase = "voy en mi moto contentento por la carreterea y veo otra moto";
+//esto solo remplaza la priemra vez que se encuentra la palabra moto
+let nueva_frase = frase.replace("moto", "coche");
+//esto remplaza todo
+let nueva_frase1 = frase.replaceAll("moto", "coche");
+
+//asignadores logicos 
+let nombre5 = "pedro";
+let id = 80;
+
+nombre5 ||= id;
+//si nombre5 no vale nada, entonces nombre5 se cargara con el valord e ir;
+//si let nombre5;
+//y nombre ||= id;
+//entonces nombre5 = id;
+console.log(nombre5);

@@ -15,6 +15,12 @@ esto solo funciona en una consola de linux
 ~~~
 transcribe, ve todos los archivos ts
 
+para windows es:
+este solo esta al pendiente de un archivo ay que windows no reconoce el *
+~~~
+ tsc arhivo.ts -w
+~~~
+
 # Master en Javascript: Aprende JS, JQuery, Angular, NodeJS
 ~~~typescript
 //hacer un nuevo tipo
@@ -136,6 +142,9 @@ interface SudaderaBase{
 ~~~
 
 # Master en TypeScript, JavaScript Moderno
-~~~
+generar el finechero de configuracion de typescript
 
+donde esta el ptoyecto se hace:
+~~~
+tsc -init
 ~~~

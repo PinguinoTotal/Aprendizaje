@@ -18,6 +18,8 @@
     </label>
     -->
 
+    <!--mientras que aqui se llama a la referencia del servicio que ya fue construida en 
+    el constructor-->
     <p>Mi curso favorito es: {{referenciaAlServicio.getCursosPorId(cursoId)}}</p>
     
     <label for="curso">
@@ -25,4 +27,10 @@
         <input type="number" id="curos" [(ngModel)] = "cursoId">
     </label>
 
+    <h3>Informacion obtenida del curso</h3>
+    
+    @for (album of listaAlbums; track album.id) {
+        <h4>Este album se llama: {{album.title}}</h4>
+    }
+    
 </section>

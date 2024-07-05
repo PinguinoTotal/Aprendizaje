@@ -538,7 +538,7 @@ export class FormularioComponent {
 }
 ~~~
 
-## Servicios
+## Servicios y consumo de API
 
 para crear un servicio se hace asi:
 
@@ -570,12 +570,48 @@ export class CursosService {
   }
 }
 ~~~
+codigo del servicio que ocuparemos para hacer una peticion HTTP
+~~~ts
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AlbumServiceService {
+
+  //esto es para hacer peticiones http
+  constructor(private http: HttpClient) { }
+
+  url:string = 'https://jsonplaceholder.typicode.com/albums/';
+
+  obtenerAlbums(){
+    return this.http.get(this.url);
+  }
+}
+~~~
+
+pequeño codigo de config para que pueda hacer las peticiones 
+~~~ts
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+
+//provideHttpClient(withFetch()) con esto le damos el proveedor para hacer las peticiones http
+export const appConfig: ApplicationConfig = {
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideHttpClient(withFetch())]
+};
+
+~~~
 
 codigo del componente al cual le inyectamos la dependencia
 ~~~ts
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CursosService } from '../services/cursos.service';
 import { FormsModule } from '@angular/forms';
+import { AlbumServiceService } from '../services/album-service.service';
 
 @Component({
   selector: 'app-servicios',
@@ -584,7 +620,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './servicios.component.html',
   styleUrl: './servicios.component.css'
 })
-export class ServiciosComponent {
+export class ServiciosComponent implements OnInit{
   //inyectando la dependencia esto tambien se puede hacer en el constructor
   /*
   servicioCursos = inject(CursosService)
@@ -593,14 +629,24 @@ export class ServiciosComponent {
   almacenarCursos!: string[];
   referenciaAlServicio!: CursosService;
   cursoId:number = 0;
+  listaAlbums:any;
 
   //inyectando la dependencia desde el contsructor
-  constructor(private servicioCursos: CursosService){
+  constructor(private servicioCursos: CursosService, private albumService: AlbumServiceService){
+    //se necesitara un provedor para hacer las peticiones http por ende tenemos que ponerlo en el config 
     this.almacenarCursos = this.servicioCursos.getCursos();
     this.referenciaAlServicio = servicioCursos;
   }
-}
 
+  ngOnInit(): void {
+    //llamo al metoido obtener albumes y me suscribo para cuando me de el 
+    //resultado
+    this.albumService.obtenerAlbums().subscribe((albums) =>{
+      this.listaAlbums = albums;
+      console.log(this.listaAlbums);
+    })
+  }
+}
 ~~~
 
 codigo html en el cual usamos la dependencia que ya se le inyecto en el ts
@@ -625,6 +671,8 @@ codigo html en el cual usamos la dependencia que ya se le inyecto en el ts
     </label>
     -->
 
+    <!--mientras que aqui se llama a la referencia del servicio que ya fue construida en 
+    el constructor-->
     <p>Mi curso favorito es: {{referenciaAlServicio.getCursosPorId(cursoId)}}</p>
     
     <label for="curso">
@@ -632,7 +680,14 @@ codigo html en el cual usamos la dependencia que ya se le inyecto en el ts
         <input type="number" id="curos" [(ngModel)] = "cursoId">
     </label>
 
+    <h3>Informacion obtenida del curso</h3>
+    
+    @for (album of listaAlbums; track album.id) {
+        <h4>Este album se llama: {{album.title}}</h4>
+    }
+    
 </section>
+
 
 ~~~
 

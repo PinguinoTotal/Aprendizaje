@@ -1,0 +1,3 @@
+.footer{
+    @apply bg-gradient-to-r from-pink-600 to-purple-500 text-white align-middle text-center p-3 text-base
+}

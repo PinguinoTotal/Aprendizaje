@@ -1,19 +1,9 @@
-<section class="main">
+<section class="main main_sm">
     <nav class="main__functions">
-        <div class="function__listaMeta-block">
-            <a href="/lista" class="function__listaMeta-link">
-                <i class="fa-solid fa-list"></i> Lista de Metas
-            </a>
-        </div>
-        
-        <div class="function__nuevaMeta-block">
-            <a href="/crear" class="function__nuevaMeta-link">
-                <i class="fa-solid fa-circle-plus"></i> Nueva Meta
-            </a>
-        </div>
+        <app-vinculos [href] = "'/'" [caracter]="'fa-solid fa-list'" [texto]="'Lista de Metas '"></app-vinculos>
+        <app-vinculos [href] = "'/crear'" [caracter]="'fa-solid fa-circle-plus'" [texto]="'Nueva Meta'"></app-vinculos>
     </nav>
-
-    <main>
+    <main class="main__changer">
         <router-outlet></router-outlet>
     </main>
 </section>

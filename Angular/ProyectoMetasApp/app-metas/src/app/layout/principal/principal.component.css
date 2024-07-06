@@ -1,0 +1,12 @@
+.main{
+    @apply grid grid-cols-1 bg-slate-200 sm:grid-cols-4 sm:h-full
+
+}
+
+.main__functions{
+    @apply text-xl h-full
+}
+
+.main__changer{
+    @apply bg-slate-100 sm:col-span-3 h-full
+}

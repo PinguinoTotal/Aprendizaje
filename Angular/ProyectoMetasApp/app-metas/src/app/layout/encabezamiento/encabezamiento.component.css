@@ -1,0 +1,15 @@
+.header{
+    @apply flex text-4xl p-4 border-b justify-between
+}
+
+.header__logo{
+    @apply flex
+}
+
+.logo__link{
+    @apply ml-2 font-semibold
+}
+
+.user_img{
+    @apply text-3xl
+}

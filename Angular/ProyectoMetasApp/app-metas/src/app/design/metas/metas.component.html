@@ -1,0 +1,24 @@
+<div class="tarjeta">
+    <div class="tarjeta__rowData">
+        <div class="tarjeta__rowData-icono">
+            <div class="icono">
+                {{meta.icono}}
+            </div>
+        </div>
+
+        <p class="tarjeta__rowData-periodo">{{meta.eventos}}/ <sub>{{meta.periodo}}</sub></p>
+        <p class="tarjeta__rowData-detalles">{{meta.detalles}}</p>
+    </div>
+
+    <div class="tarjeta__progresData">
+        <div class="tarjeta__progress">
+            <p class="tarjeta__progresData-numerico">{{meta.completado}} de {{meta.meta}}</p>
+            <div class="tarjeta__progresData-barra barra1">
+                <div class="barar2"></div>
+            </div>
+        </div>
+
+
+        <button class="tarjeta__progresData-btn">Completado</button>
+    </div>
+</div>

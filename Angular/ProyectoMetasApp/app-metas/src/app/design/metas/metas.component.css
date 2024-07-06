@@ -1,0 +1,54 @@
+.tarjeta{
+    @apply bg-white rounded-xl m-2 p-3 h-16 flex justify-between
+    sm:h-20
+}
+
+.tarjeta__rowData, .tarjeta__progresData{
+    @apply flex items-center 
+}
+
+.tarjeta__rowData-icono{
+    @apply shadow-inner shadow-slate-300 flex ml-2 h-12 w-12 rounded-full
+}
+
+.icono{
+    @apply h-auto w-auto content-center m-auto text-3xl
+    sm:text-xl
+    
+}
+
+.tarjeta__progress{
+    @apply flex flex-col mr-6 text-2xl items-center
+    sm:text-lg
+}
+
+.tarjeta__progresData-btn{
+    @apply bg-gradient-to-r from-pink-600 to-purple-500 text-white rounded-3xl p-1 px-4 shadow-md shadow-gray-400
+}
+
+/*responsive de hacer aparecer o desaparecer partes */
+.tarjeta__rowData-periodo,
+.tarjeta__rowData-detalles,
+.tarjeta__progresData-barra{
+    @apply hidden
+}
+
+.tarjeta__rowData-periodo,
+.tarjeta__rowData-detalles,
+.tarjeta__progresData-barra{
+    @apply sm:block
+}
+
+.tarjeta__rowData-periodo{
+    @apply ml-4
+}
+
+.tarjeta__rowData-detalles{
+    @apply ml-4
+}
+
+.tarjeta__progresData-barra{
+    @apply  w-28 h-1 bg-slate-950
+}
+
+

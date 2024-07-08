@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Metas } from '../../models/metas';
+import { MetasService } from '../../services/metas.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-nueva-meta',
@@ -9,6 +12,9 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './nueva-meta.component.css'
 })
 export class NuevaMetaComponent {
+  //haciendo inyeccion de dependencia a traves de varriable
+  metasService = inject(MetasService);
+
   formularioMeta = new FormGroup(
     {
     id: new FormControl(),
@@ -21,5 +27,36 @@ export class NuevaMetaComponent {
     completado: new FormControl(),
 })
 
+//dando los valores que puede tomar los evenetos
+frecuencia: string[] = ["día", "semana", "mes", "año"];
+iconos: string[] = ["🦞","⚽","🏃","👨‍🚒","🤺","🅰","️🆎","🅱","️🆑","📨","📖","📆","💳","👨‍🌾"];
+
+//meta que va a recibir los valores del formulario
+metaEnviar?: Metas;
+
+//inyectamos la dependencia de route para poder 
+//hacer uso de esta
+constructor(private router:Router){
 
 }
+subirFormulario():void{
+  this.metaEnviar = {
+    "id":"1",
+    "detalles": this.formularioMeta.value.detalles!,
+    "periodo": this.formularioMeta.value.periodo!,
+    "eventos": this.formularioMeta.value.eventos!,
+    "icono": this.formularioMeta.value.icono!,
+    "meta": this.formularioMeta.value.meta!,
+    "plazo": this.formularioMeta.value.plazo!,
+    "completado": this.formularioMeta.value.completado!,
+  }
+
+  this.metasService.actualizarMetas(this.metaEnviar);
+
+  //esto es para hacer qeu se vaya de una pestaña a otra 
+  this.router.navigate(['/'])
+}
+
+}
+
+

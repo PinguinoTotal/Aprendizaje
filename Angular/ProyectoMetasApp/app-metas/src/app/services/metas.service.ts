@@ -62,4 +62,8 @@ export class MetasService {
   obtenerMetas(): Metas[]{
     return this.metasMock;
   }
+
+  actualizarMetas(meta:Metas){
+    this.metasMock.push(meta);
+  }
 }

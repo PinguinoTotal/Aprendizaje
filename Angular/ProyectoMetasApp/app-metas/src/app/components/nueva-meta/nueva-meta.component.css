@@ -8,12 +8,17 @@
 
 input[type="text"],
 input[type="date"],
-input[type="number"]{ 
-    @apply shadow-inner rounded-3xl h-10 w-full shadow-slate-500 mt-2 p-3
+input[type="number"],
+.input{ 
+    @apply shadow-inner rounded-3xl h-12 w-full shadow-slate-500 mt-2 p-3
 }
 
 .form{
     @apply my-5
+}
+
+.frecuencia__inputs{
+    @apply grid grid-cols-1 sm:grid-cols-2 sm:gap-4
 }
 
 .buttons{

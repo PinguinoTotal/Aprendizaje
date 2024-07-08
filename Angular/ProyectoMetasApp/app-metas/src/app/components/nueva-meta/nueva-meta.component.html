@@ -1,6 +1,6 @@
 <section>
     <div class="formulary">
-        <form [formGroup]="formularioMeta">
+        <form [formGroup]="formularioMeta" (ngSubmit)="subirFormulario()">
             <div class="inputs">
                 <div class="form formulario__describe">
                     <label for="descripcion">DESCRIBE TU META</label>
@@ -8,35 +8,47 @@
                     formControlName="detalles" placeholder="ej. 52 caminatas" id="descripcion">
                 </div>
         
-                <div class="form formulario__describe">
+                <div class="form formulario__frecuencia">
                     <label>¿CON QUE FRECUENCIA DESEAS CUMPLIR TU META? (EJ. 1 VEZ A LA SEMANA)</label>
-                    <input type="text" formControlName="periodo">
-                    <input type="text" formControlName="eventos">
+                    <div class="frecuencia__inputs">
+                        <input type="text" formControlName="eventos">
+                        <select class="input" formControlName="periodo">
+                            <!--se puede hacer que las opciones sean cargadas desde eñ typescript-->
+                            @for (frec of frecuencia; track frec) {
+                                <option value="{{frec}}">{{frec}}</option>
+                            }
+                        </select>
+                    </div>
+                    
                 </div>
         
-                <div class="form formulario__describe">
+                <div class="form formulario__deseas">
                     <label for="meta">¿CUANTAS VECES DESEAS COMPLETAR ESTA META?</label>
-                    <input type="text" formControlName="meta" id="meta">
+                    <input type="number" formControlName="meta" id="meta">
                 </div>
         
-                <div class="form formulario__describe">
+                <div class="form formulario__fecha">
                     <label for="date">¿TIENES UNA FECHA LIMITE?</label>
                     <input type="date" name="date" formControlName="plazo" id="date">
                 </div>
         
-                <div class="form formulario__describe">
+                <div class="form formulario__completo">
                     <label for="completado">¿CUANTAS VECES HAZ COMPLETADO YA ESTA META?</label>
-                    <input type="text" name="completado" formControlName="completado" id="completado">
+                    <input type="number" name="completado" formControlName="completado" id="completado">
                 </div>
         
-                <div class="form formulario__describe">
+                <div class="form formulario__icono">
                     <label for="icono">ESCOGE EL ICONO PARA LA META</label>
-                    <input type="text" name="icono" formControlName="icono" id="icono">
+                    <select class="input" name="icono" id="icono" formControlName="icono">
+                        @for (icono of iconos; track icono) {
+                            <option value="{{icono}}">{{icono}}</option>
+                        }
+                    </select>
                 </div>
             </div>
 
             <div class="buttons">
-                <button class="btn create">Crear</button>
+                <button type="submit" class="btn create">Crear</button>
                 <button class="btn cancel">Cancelar</button>
             </div>
         </form>

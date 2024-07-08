@@ -1,0 +1,7 @@
+.container1{
+    @apply flex items-center fixed inset-0 bg-gray-500 bg-opacity-75
+}
+
+.container2{
+    @apply mx-auto
+}

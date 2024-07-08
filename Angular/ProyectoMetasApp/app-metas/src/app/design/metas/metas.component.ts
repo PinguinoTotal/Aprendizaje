@@ -1,5 +1,7 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Metas } from '../../models/metas';
+import { Router } from '@angular/router';
+import { EditMetaServiceService } from '../../services/edit-meta-service.service';
 
 @Component({
   selector: 'app-metas',
@@ -14,11 +16,20 @@ export class MetasComponent implements OnInit {
   meta!: Metas;
   alcanzado: number = 0;
 
-  ngOnInit(): void {
-    console.log(this.meta.completado);
-    console.log(this.meta.meta);
-    this.alcanzado = (this.meta.completado/this.meta.meta) * 100;
+  //inyecto el servicio que hara que se comuniquen 
+  comunication = inject(EditMetaServiceService); 
 
-    console.log(this.alcanzado)
+  constructor(private router:Router){
+
+  }
+
+  ngOnInit(): void {
+    this.alcanzado = (this.meta.completado/this.meta.meta) * 100;
+  }
+
+  editarMeta(){
+    this.comunication.setMetaAEditar(this.meta);
+    console.log(this.comunication.getMetaAEditar());
+    this.router.navigate(['/editar'])
   }
 }

@@ -692,7 +692,7 @@ codigo html en el cual usamos la dependencia que ya se le inyecto en el ts
 
 ## Proyecto metas
 
-es importante decriq eu en esta seccion estamos ocupando una nueva distribucion más ordenada de los archivos, para que sea más facil encontrarlos y usarlosa, siendo asi que tenemos que cambiar algunas configuarciones de main.ts para que lea de manera correcta nuestra app component que es el componente principal del cual se van a tomar las configuraciones 
+es importante decir que en esta seccion estamos ocupando una nueva distribucion más ordenada de los archivos, para que sea más facil encontrarlos y usarlosa, siendo asi que tenemos que cambiar algunas configuarciones de main.ts para que lea de manera correcta nuestra app component que es el componente principal del cual se van a tomar las configuraciones 
 
 tambien para hacer uso de font awesome la "licencia" que nos da tenemos que copiarla en el index.html principal 
 
@@ -701,3 +701,4 @@ el router-outlet es ele elemento que va a camabiar entre las paginas, se ve un p
 ~~~ ts
 
 ~~~
+

@@ -1,0 +1,35 @@
+.formulary{
+    @apply bg-white rounded-2xl m-2 pt-1
+}
+
+.inputs{
+    @apply m-4
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"]{ 
+    @apply shadow-inner rounded-3xl h-10 w-full shadow-slate-500 mt-2 p-3
+}
+
+.form{
+    @apply my-5
+}
+
+.buttons{
+    @apply flex justify-between bg-slate-400 rounded-b-2xl p-4 px-7
+    bg-gradient-to-r from-neutral-700 to-neutral-200
+}
+
+.btn{
+    @apply bg-white w-20 rounded-full shadow-lg shadow-gray-800
+}
+
+.create{
+    @apply bg-neutral-800 text-white hover:ease-in hover:bg-white hover:text-black
+}
+
+.cancel{
+    @apply bg-white text-black hover:ease-in hover:bg-black hover:text-white
+}
+

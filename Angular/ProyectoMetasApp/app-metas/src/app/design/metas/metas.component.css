@@ -48,7 +48,11 @@
 }
 
 .tarjeta__progresData-barra{
-    @apply  w-28 h-1 bg-slate-950
+    @apply  w-28 h-1 bg-purple-200
+}
+
+.barra2{
+    @apply h-full bg-gradient-to-r from-pink-600 to-purple-500
 }
 
 

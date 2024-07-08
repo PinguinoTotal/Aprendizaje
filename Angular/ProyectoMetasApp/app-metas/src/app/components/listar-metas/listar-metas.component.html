@@ -1,1 +1,3 @@
-<app-metas [meta]="meta"></app-metas>
+@for (meta of listaDeMetas; track meta.id) {
+    <app-metas [meta]="meta"></app-metas>
+}

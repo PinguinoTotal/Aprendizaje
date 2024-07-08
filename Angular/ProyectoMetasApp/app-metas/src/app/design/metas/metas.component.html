@@ -14,7 +14,8 @@
         <div class="tarjeta__progress">
             <p class="tarjeta__progresData-numerico">{{meta.completado}} de {{meta.meta}}</p>
             <div class="tarjeta__progresData-barra barra1">
-                <div class="barar2"></div>
+                <!--cambiando de width por codigo-->
+                <div  class="barra2" [style.width.%] ="alcanzado"></div>
             </div>
         </div>
 

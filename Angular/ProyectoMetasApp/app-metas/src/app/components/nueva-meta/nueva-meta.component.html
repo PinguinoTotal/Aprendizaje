@@ -1,0 +1,44 @@
+<section>
+    <div class="formulary">
+        <form [formGroup]="formularioMeta">
+            <div class="inputs">
+                <div class="form formulario__describe">
+                    <label for="descripcion">DESCRIBE TU META</label>
+                    <input type="text" name="descripcion" 
+                    formControlName="detalles" placeholder="ej. 52 caminatas" id="descripcion">
+                </div>
+        
+                <div class="form formulario__describe">
+                    <label>¿CON QUE FRECUENCIA DESEAS CUMPLIR TU META? (EJ. 1 VEZ A LA SEMANA)</label>
+                    <input type="text" formControlName="periodo">
+                    <input type="text" formControlName="eventos">
+                </div>
+        
+                <div class="form formulario__describe">
+                    <label for="meta">¿CUANTAS VECES DESEAS COMPLETAR ESTA META?</label>
+                    <input type="text" formControlName="meta" id="meta">
+                </div>
+        
+                <div class="form formulario__describe">
+                    <label for="date">¿TIENES UNA FECHA LIMITE?</label>
+                    <input type="date" name="date" formControlName="plazo" id="date">
+                </div>
+        
+                <div class="form formulario__describe">
+                    <label for="completado">¿CUANTAS VECES HAZ COMPLETADO YA ESTA META?</label>
+                    <input type="text" name="completado" formControlName="completado" id="completado">
+                </div>
+        
+                <div class="form formulario__describe">
+                    <label for="icono">ESCOGE EL ICONO PARA LA META</label>
+                    <input type="text" name="icono" formControlName="icono" id="icono">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn create">Crear</button>
+                <button class="btn cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</section>

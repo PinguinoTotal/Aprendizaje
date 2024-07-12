@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.TodoCode</groupId>
-	<artifactId>Restaurante</artifactId>
+	<artifactId>DTO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Restaurante</name>
+	<name>DTO</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

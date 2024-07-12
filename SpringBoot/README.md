@@ -2,7 +2,9 @@
 
 ## Desarrollo de APIs con Spring Boot 
 
-### Creando una PI con Spring Boot
+### APIs con Spring Boot
+
+#### Creando una API con Spring Boot
 Primero que nada se debe setear un proyecto de springboot, esto se hace desde una aplicacion web que tiene spring boot, se busca como Spring initializer [esta es la pagina](https://start.spring.io), en el curso pusimos estas dependencias para que funcionara bien: ![Texto alternativo](/assets/img/dependencias.png "Título alternativo")
 
 despues de se debe descargar el proyecto con el boton GENERATE ![Texto alternativo](/assets/img/generate.png "Título alternativo")
@@ -247,6 +249,140 @@ public class applicacionController {
         //en este ejemplo se fuerza a que la respuesta sea un sttaus 400 
         //y que responda con el mensaje "esta es una prueba de response"
         return new ResponseEntity<> ("esta es una prueba de response", HttpStatus.NOT_FOUND);
+    }
+}
+~~~
+
+#### Patron DTO (Data Transfer Object)
+
+por lo general siempre existen problemas de comunicacion, porque le back y el front hablan diferentes idiomas
+
+Dto es una clase intermediaria entre la comunicacion 
+
+el dto es crear una clase que unifique los valores de diferentes clases que estan ligadas que queremos saber o son necesarios apra el front end 
+
+Inquilino.java
+~~~ java
+package com.TodoCode.DTO;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class Inquilino {
+    
+    // (premisa) al front solo le importa saber el nombre y apellido del inquilino
+    private Long id_inquilino;
+    private String dni;
+    private String nombre;
+    private String apellido;
+    private String profesion;
+
+    public Inquilino() {
+    }
+
+    public Inquilino(Long id_inquilino, String dni, String nombre, String apellido, String profesion) {
+        this.id_inquilino = id_inquilino;
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.profesion = profesion;
+    }
+}
+~~~
+
+Propiedad.java
+~~~ java
+package com.TodoCode.DTO;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class Propiedad {
+    
+    // (premisa) al front le importa saber todo menos m2 de la propiedad
+    private Long id_propiedad;
+    private String tipo_propiedad;
+    private String direccion;
+    private Double metros_cuadrados;
+    private Double valor_alquiler;
+
+    public Propiedad() {
+    }
+
+    public Propiedad(Long id_propiedad, String tipo_propiedad, String direccion, Double metros_cuadrados, Double valor_alquiler) {
+        this.id_propiedad = id_propiedad;
+        this.tipo_propiedad = tipo_propiedad;
+        this.direccion = direccion;
+        this.metros_cuadrados = metros_cuadrados;
+        this.valor_alquiler = valor_alquiler;
+    }
+}
+~~~
+
+PropiedadDTO.java
+~~~ java
+package com.TodoCode.DTO;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class PropiedadDTO {
+    private Long id_propiedad;
+    private String tipo_propiedad;
+    private String direccion;
+    private Double valor_alquiler;
+    private String nombre;
+    private String apellido;
+
+    public PropiedadDTO() {
+    }
+
+    public PropiedadDTO(Long id_propiedad, String tipo_propiedad, String direccion, Double valor_alquiler, String nombre, String apellido) {
+        this.id_propiedad = id_propiedad;
+        this.tipo_propiedad = tipo_propiedad;
+        this.direccion = direccion;
+        this.valor_alquiler = valor_alquiler;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+}
+~~~
+
+DTOcontroller.java
+~~~ java
+package com.TodoCode.DTO.Controller;
+
+import com.TodoCode.DTO.Inquilino;
+import com.TodoCode.DTO.Propiedad;
+import com.TodoCode.DTO.PropiedadDTO;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DTOController {
+    
+    @GetMapping("/propiedad/{id}")
+    public PropiedadDTO devolverPropiedad(@PathVariable Long id){
+        //que a traves de la id buscamos la propiedad
+        //trajimos al inquilino asociado a esa propiedad
+        
+        Propiedad prop = new Propiedad(15487L, "casa", "308Negro Arroyo Lane", 200.0, 40000.0);
+        
+        Inquilino inqui = new Inquilino(1L, "12345678", "Walter", "White", "Profesor de quimica");
+        
+        //unificando los valores del DTO
+        PropiedadDTO propiDTO = new PropiedadDTO();
+        propiDTO.setId_propiedad(prop.getId_propiedad());
+        propiDTO.setTipo_propiedad(prop.getTipo_propiedad());
+        propiDTO.setDireccion(prop.getDireccion());
+        propiDTO.setValor_alquiler(prop.getValor_alquiler());
+        propiDTO.setNombre(inqui.getNombre());
+        propiDTO.setApellido(inqui.getApellido());
+        return propiDTO;
     }
 }
 ~~~

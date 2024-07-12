@@ -11,4 +11,20 @@ public class Cliente {
     private String nombre;
     private String apellido;
     
+    //aunque tengamos el @Getter @Setter siempre 
+    //es una buena practica crear los constructores
+    
+    //(alt+insert)
+
+    public Cliente() {
+    }
+
+    public Cliente(Long id, String nombre, String apellido) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+    
+    
+    
 }

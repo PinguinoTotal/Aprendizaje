@@ -14,8 +14,6 @@ public class applicacionController {
     public void crearCliente(@RequestBody Cliente cli){
             System.out.println("cliente creado");
             System.out.println("El cliente se llama: "
-                    + cli.get);
+                    + cli.getNombre() + " " +  cli.getApellido());
     }
-    
-    
 }

@@ -129,3 +129,60 @@ la manera en que se comunican el front y el back es a traves de un json {llave: 
     }
 ]
 ~~~
+
+para utilizar el post es necesario utilizar otros metodos:
+
+esta es la estructura que toman los archivos:
+
+![Texto alternativo](/assets/img/distribucionPost.png "Título alternativo")
+
+primero creamos una clase la cual va a ser vir apra mandar objetos de ese tipo
+
+Cliente.java
+~~~ java
+package com.todocodeacademy.CursoSpringBoot;
+
+import lombok.Getter;
+import lombok.Setter;
+
+//usamos una libreria para hacer los seteres y getesr se los atributos
+//de la clase
+@Getter @Setter
+public class Cliente {
+    private Long id;
+    private String nombre;
+    private String apellido;
+    
+}
+~~~ 
+
+luego creamos el scripot que va a resivir las peticiones
+
+applicacionController.java
+~~~ java
+
+package com.todocodeacademy.CursoSpringBoot.controller;
+
+import com.todocodeacademy.CursoSpringBoot.Cliente;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class applicacionController {
+    
+    //haciendo post
+    @PostMapping("/cliente")
+    //request body son los elementos que se mandaran por post
+    public void crearCliente(@RequestBody Cliente cli){
+            System.out.println("cliente creado");
+            System.out.println("El cliente se llama: "
+                    + cli.getNombre() + " " +  cli.getApellido());
+    }
+}
+
+~~~
+
+luego con postman verificamos que los post recibidos de manera correcta 
+
+![Texto alternativo](/assets/img/postman1.png "Título alternativo")

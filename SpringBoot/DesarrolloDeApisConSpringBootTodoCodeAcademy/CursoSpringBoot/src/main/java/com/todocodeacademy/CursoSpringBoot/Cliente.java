@@ -24,7 +24,4 @@ public class Cliente {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-    
-    
-    
 }

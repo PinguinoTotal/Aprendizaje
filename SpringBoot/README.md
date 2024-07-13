@@ -815,3 +815,14 @@ public interface IPersonaRepository extends JpaRepository <Persona,Long>{
 ~~~
 
 despues de hacer la configuracion, y correr el programa se nos generara una tabla en la base de datos y ya habremos terminado de este ejercicio de como configurar JPA + Hibernate en Spring Boot
+
+
+#### Creando un CRUD con JPA + Hibernate 
+
+esta clase la vamos a aseguri con lo que ya teniamos echo anteriormente 
+
+implementamos los metodos en IPersonasService
+
+hacemos los respectivops metods implementados en PersonasService
+
+hasta aca ya estaria lista la parte de negocio de nuestra aplicación 

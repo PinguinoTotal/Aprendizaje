@@ -386,3 +386,432 @@ public class DTOController {
     }
 }
 ~~~
+
+#### Arquitectura multicapas
+
+el mas comun de los modelos de capas tiene (todos van en minusculas en el proyecto)
+<ol>
+    <li>
+        Controller
+        <ul>
+            <li>Capa encargada de atender las solicutudes HTTP entrantes que vamos a tener para poder derivar a la capa que corresponde, a apartir de eso generar un response y poder responder al cliente que hace la solicutud</li>
+            <li>Generalmente trabaja con la capa de servicio que es la encargada de buscar los datos y hacer operaciones logicas para poder generar la response</li>
+        </ul>
+    </li>
+    <li>
+        Repository o DAO (Data Acces Object)
+        <ul>
+            <li>Manejo de la persistencia de datos, la interaccion con la base de datos</li>
+            <li>Aqui estan las controladoras de persistencia, nuestras clases jpa que necesitemos, las configuraciones que necesitemos para comunicarnos con la base de datos</li>
+        </ul>
+    </li>
+    <li>
+        Model(o Entity)
+        <ul>
+            <li>Aqui van todas las clases enstandares que representan una entidad dentro de mi base de datos</li>
+        </ul>
+    </li>
+    <li>
+        DTO (Data Transfer Object)
+        <ul>
+            <li>Aqui van todos los DTO dentro de este paquete</li>
+        </ul>
+    </li>
+    <li>
+        Service
+        <ul>
+            <li>Aqui vatoda la parte logica del proyecto, las operaciones, operaciones de los metodos,busqueda, autentificacion, etc</li>
+        </ul>
+    </li>
+</ol>
+
+
+debe de quedar de esta manera:
+
+![Texto alternativo](/assets/img/arquitectura%20de%20capas.png "Título alternativo")
+
+quedando masomenos de esta manera
+
+![Texto alternativo](/assets/img/arquitecturaDeCapasRelleno.png "Título alternativo")
+
+se deben implementar los metodos a traves de interfaces 
+
+carpeta Controller
+
+aplicacionController.java
+~~~ java
+package com.TodoCode.ArquitecturaMulticapas.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+//indicamos que brinda el servicio de rest controller 
+@RestController
+public class aplicacionController {
+    
+}
+~~~
+
+carpeta Repository o DAO (Data Acces Object)
+
+PersonaRepository.java
+~~~ java
+package com.TodoCode.ArquitecturaMulticapas.repository;
+//el nombre del archivo debe tener el nomnbre y la carpeta en la que va, o 
+//más bien que servicio esta brindando
+
+import org.springframework.stereotype.Repository;
+
+
+//con estos abe que PersonaRepository va a ser un archivo que brinda los 
+//servicios de respository, o uno de ellos, ya que puede tener más
+@Repository
+public class PersonaRepository {
+    
+    //metodos para llamar a la base de datos, etc
+    
+}
+~~~
+
+carpeta Model(o Entity)
+
+Persona.java
+~~~ java
+package com.TodoCode.ArquitecturaMulticapas.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+
+//a la clase persona no tenemos que especificar nada en la cabecera porque java 
+//ya lo sabe por default
+@Getter @Setter
+public class Persona {
+    private Long id;
+    private String nombre;
+    private String apellido;
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre, String apellido) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+}
+~~~
+
+carpeta DTO (Data Transfer Object)
+
+esta la vimos la clase anterior
+
+carpeta Service
+
+PersonaService.java
+~~~ java
+package com.TodoCode.ArquitecturaMulticapas.service;
+import com.TodoCode.ArquitecturaMulticapas.model.Persona;
+import java.util.List;
+import org.springframework.stereotype.Service;
+
+//este archivo brinda servicios de service
+@Service
+public class PersonaService  implements IPersonaService{
+    //métodos de logica de negocio 
+    
+    //los metodos siempre tienen que ser implementafdos a traves de interfaces 
+    
+    @Override
+    public void crearPersona(Persona per) {
+        //logica de creacion
+        System.err.println("Persona creada");
+    }
+
+    @Override
+    public List<Persona> traerPersonas() {
+        //aqui deberia ir la logica para devolver la lista de personas
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+}
+~~~
+
+IPersonaService.java
+~~~ java
+package com.TodoCode.ArquitecturaMulticapas.service;
+
+import com.TodoCode.ArquitecturaMulticapas.model.Persona;
+import java.util.List;
+
+public interface IPersonaService {
+    
+    //declarando los metodos en mi interface
+    public void crearPersona(Persona per);
+    public List<Persona> traerPersonas();
+}
+~~~
+
+#### Inyeccion de dependencias 
+cada capa debe estar desacoplada de las demas pero puedan llamarse entre si, todo esto es parta que no se haga a traves de instacias si no mediante interfaces, se puede a traves de constructores y seters
+
+la estructura es asi:
+
+![Texto alternativo](/assets/img/intyeccionDeDependenciasCONSySET.png "Título alternativo")
+
+
+y se implementa de esta manera:
+
+ServicioLavado.java
+~~~ java
+package com.mycompany.inyecciondedependecias.model;
+
+public class ServicioLavado {
+    private ServicioNormal serviNorm;
+    private ServicioPremium serviPrem;
+
+    //la inyeccion de dependencias se basa en no hacer nuevois objetos, 
+    //si no que solo crearlos una ves y reusarlos
+    
+    //inyeccion de dependencias por constructores
+    public ServicioLavado(ServicioNormal serviNorm, ServicioPremium serviPrem) {
+        this.serviNorm = serviNorm;
+        this.serviPrem = serviPrem;
+    }
+    
+    //inyeccion de dependencias por set
+    public void setServiNorm(ServicioNormal serviNorm) {
+        this.serviNorm = serviNorm;
+    }
+
+    public void setServiPrem(ServicioPremium serviPrem) {
+        this.serviPrem = serviPrem;
+    }
+    
+}
+~~~
+
+tambien la inyeccion de dependencias puede hacerse mediante autowire que se hace de esta manera, este es otro nuevo proyecto:
+
+![Texto alternativo](/assets/img/inyeccionAutowirex.png "Título alternativo")
+
+Posteo.java
+~~~ java
+package com.todocodeacademy.cursoSpringBoot.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class Posteo {
+    
+    private Long id;
+    private String titulo;
+    private String autor;
+
+    public Posteo() {
+    }
+
+    
+    public Posteo(Long id, String titulo, String autor) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+    }
+}
+~~~
+
+IPosteoRepository.java
+~~~ java
+package com.todocodeacademy.cursoSpringBoot.repository;
+import com.todocodeacademy.cursoSpringBoot.model.Posteo;
+import java.util.List;
+
+public interface IPosteoRepository {
+    
+    public List<Posteo> traerTodos();
+    
+}
+~~~
+
+PosteoRepository.java
+~~~ java
+package com.todocodeacademy.cursoSpringBoot.repository;
+import com.todocodeacademy.cursoSpringBoot.model.Posteo;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class PosteoRepository implements IPosteoRepository{
+
+    @Override
+    public List<Posteo> traerTodos() {
+        //simulando la base de datos de forma logica
+       List<Posteo> listaPosteos = new ArrayList<Posteo> ();
+       listaPosteos.add(new Posteo (1L, "¿Cómo formatear una PC?", "Luisina de Paula"));
+       listaPosteos.add(new Posteo (2L, "¿Cómo mantener la seguridad?", "Gabriel Guismín"));
+       
+       return listaPosteos;
+    }
+}
+~~~
+
+aplicaccionController.java
+~~~ java
+package com.todocodeacademy.cursoSpringBoot.controller;
+
+import com.todocodeacademy.cursoSpringBoot.model.Posteo;
+import com.todocodeacademy.cursoSpringBoot.repository.IPosteoRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class aplicacionController {
+
+    //inyectando la interfaz con autowire
+    @Autowired
+    IPosteoRepository repo;
+
+    
+    @GetMapping("/posteos")
+    public List<Posteo> traerTodos() {
+        //podemos lalmar a ka intrerfaz porque esta esta asosiada a la clase 
+        //y por ende lo podemos llamar porque la clase que implementa la interface
+        //tine ele @Override y por ende va a hacer lo que diga la clase que lo 
+        //implementa
+        return repo.traerTodos();
+        
+        //lo correcto seria llamar al servicio, y el servicio llama al repositorio
+        //pero lo hacemos asi por fines didacticos
+    }
+
+}
+~~~
+
+### JPA's (eclipse o hibernate son proveedores de jpa's)
+
+#### Implementando Hibernate a SpirngBoot
+
+primero hacemos la implementacion de dependencias en SpringBoot mediante el SpirngInitializr, 
+
+![Texto alternativo](/assets/img/configuracionHibernateJPA.png "Título alternativo")
+
+*nota: h2 no es tan necesario porque nos permite hacer una mini base de datos que ya podemos hacer con myphpAdmin*
+
+levantamos el proyecto y vamos a la base de datos, creamos una nueva base de datos llamada **pruebaJPA** VACIO
+
+luego levantamos el proyecto en java y hacemos una configuracion en el archivo **aplication.properties** 
+
+![Texto alternativo](/assets/img/applicationproperties.png "Título alternativo")
+
+~~~ 
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/pruebajpa?seSSL=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+~~~
+
+abrimos el localhost en un navegador y ponemos h2-console despues del localhost de esta manera : **http://localhost:8080/h2-console**
+
+esto nos dara una consola de h2 en donde la configuraremos de esta manera
+
+![Texto alternativo](/assets/img/h2Console.png "Título alternativo")
+
+lo de h2 es para ver que nuestra conexion a la base de datos e scorrecta, tambien podemos hacer esto para poder modifoicar la base de datos con h2, pero no es necesario en este momento
+
+creamos un modelo y le damos los decoradores para que se mapee contra una base de datos
+
+y terminamos teniendo un archivo con esta distribucion:
+
+![Texto alternativo](/assets/img/distribucionHibernate1.png "Título alternativo")
+
+y creamo nuestro model, la clase persona 
+
+persona.java
+~~~ java
+package com.TodoCode.PruebaJPA.model;
+
+import jakarta.persistence.Basic;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+//marcamos a la clase como una entidad para poder mapearla contra 
+//una base de datos
+@Entity
+public class Persona {
+    //le damos a entender que este sera nuestro id
+    @Id
+    //le damos la secuencia 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+    private String nombre;
+    private String apellido;
+    private int edad;
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre, String apellido, int edad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+}
+~~~
+
+crear el servicio personaService con suc correspondiente IpersonaService
+
+recordemos que el controller llama al service y el service llama al repository por ende hacemos la inyeccion de dependencia del repository
+
+PersonaService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+import com.TodoCode.PruebaJPA.repository.IPersonaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonaService {
+    
+    @Autowired
+    private IPersonaRepository persoRepo;
+}
+
+~~~
+
+IPersonaService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+
+public interface IPersonaService {
+    
+}
+~~~
+
+creamos persona repository, recordemos que esta extiende de JpaReposityory para no tener que hacer todos los metodos, si no que ya solo implementarlos
+
+IPersonaRepository.java
+~~~ java
+package com.TodoCode.PruebaJPA.repository;
+import com.TodoCode.PruebaJPA.model.Persona;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository 
+//<Persona, Long>
+//esto es la clase que queremos mapear y el tipo de dato del id de esta clase
+public interface IPersonaRepository extends JpaRepository <Persona,Long>{
+    
+}
+
+~~~
+
+despues de hacer la configuracion, y correr el programa se nos generara una tabla en la base de datos y ya habremos terminado de este ejercicio de como configurar JPA + Hibernate en Spring Boot

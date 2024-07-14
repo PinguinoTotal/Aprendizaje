@@ -823,6 +823,601 @@ esta clase la vamos a aseguri con lo que ya teniamos echo anteriormente
 
 implementamos los metodos en IPersonasService
 
-hacemos los respectivops metods implementados en PersonasService
+IPersonasService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+
+import com.TodoCode.PruebaJPA.model.Persona;
+import java.util.List;
+
+public interface IPersonaService {
+    //haciendo el crud
+    
+    //metodo para traer a todas las personas
+    //lectura
+    public List<Persona> getPersonas();
+    
+    //alta
+    public void savePersona(Persona perso);
+    
+    //baja
+    public void deletePersona(Long id);
+    
+    //lectura de un solo objeto
+    public Persona findPersona(Long id);
+    
+    //editarPersona 
+    
+    //las mejores practicas no deberia poder cambiarse el id, pero puede 
+    //llegar a pasar
+    public void editPersona(Long idOriginal,
+                            Long idNueva,
+                            String nuevoNombre,
+                            String nuevoApellido,
+                            int nuevaEdad);
+}
+~~~
+
+hacemos los respectivos metods implementados en PersonasService
+
+PersonasService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+import com.TodoCode.PruebaJPA.model.Persona;
+import com.TodoCode.PruebaJPA.repository.IPersonaRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonaService implements IPersonaService{
+    
+    @Autowired
+    private IPersonaRepository persoRepo;
+
+    @Override
+    public List<Persona> getPersonas() {
+        //el metodo find all ya lo implementa hibernate 
+        List<Persona> listaPersonas = persoRepo.findAll();
+        return listaPersonas;
+    }
+
+    @Override
+    public void savePersona(Persona perso) {
+        //el metodo save ya lo tiene Hibernate
+        persoRepo.save(perso);
+    }
+
+    @Override
+    public void deletePersona(Long id) {
+        persoRepo.deleteById(id);
+    }
+
+    @Override
+    public Persona findPersona(Long id) {
+        //lo busca por id y si no lo encuntra regresa null
+        Persona perso = persoRepo.findById(id).orElse(null);
+        return perso;
+    }
+    
+    //el id de un objeto nunca deberia cambiar ni crearse de forma manual,
+    //pero es posible que esto suceda 
+
+    @Override
+    public void editPersona(Long idOriginal, Long idNueva, String nuevoNombre, String nuevoApellido, int nuevaEdad) {
+        //buscar el objeto original
+        Persona perso = this.findPersona(idOriginal);
+        
+        //proceso de modificacion a nivel logico
+        perso.setId(idNueva);
+        perso.setNombre(nuevoNombre);
+        perso.setApellido(nuevoApellido);
+        perso.setEdad(nuevaEdad);
+        
+        //hibernate necesita el metodo save para que sobreescribe sobre el objeto que ya teniamos 
+        //guardar persona
+        this.savePersona(perso);
+    }
+}
+~~~
 
 hasta aca ya estaria lista la parte de negocio de nuestra aplicación 
+
+luego hacemos nuestra parte del controlador que es el que tendra los endPoints:
+
+PersonasController.java
+~~~ java
+package com.TodoCode.PruebaJPA.controller;
+import com.TodoCode.PruebaJPA.model.Persona;
+import com.TodoCode.PruebaJPA.service.IPersonaService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PersonaController {
+    //el controller llama a la logica, la logica al repository y ella a la base de datos
+    
+    @Autowired
+    IPersonaService persoServ;
+    
+    //traer todas las personas, es un get
+    @GetMapping("/personas/traer")
+    public List<Persona> getPersonas(){
+        //esta es un respuesta clasica, porque tambien puede tener el response
+        //entity, etc
+        return persoServ.getPersonas();
+    }
+    
+    //crear nueva persona, es post
+    @PostMapping("/personas/crear")
+    public String SavePersona(@RequestBody Persona perso){
+        persoServ.savePersona(perso);
+        return "guardado con exito";
+    }
+    
+    //eliminar persona
+    //en http tambien tiene algo para eliminar 
+    @DeleteMapping("/personas/borrar/{id}")
+    public String deletePersona(@PathVariable Long id){
+        persoServ.deletePersona(id);
+        return "eliminado correctamente";
+    }
+    
+    //para la edicion es puttmapping 
+    @PutMapping("/personas/editar/{id_original}")
+    public Persona editPersona(@PathVariable Long id_original,
+            //le ponemos require= false, porque puede ser que algunos datos se
+            //modifiquen y otros no, no son obligatorios todos los parametros 
+            
+            //recordar que no es una buena practica modificar el id, pero puede
+            //llegar a pasar en un trabajo real
+            @RequestParam(required = false, name = "id") Long nuevaId,
+            @RequestParam(required = false, name = "nombre") String nuevoNombre,
+            @RequestParam(required = false, name = "apellido") String nuevoApellido,
+            @RequestParam(required = false, name = "edad") int nuevaEdad){
+        
+        persoServ.editPersona(id_original, nuevaId, nuevoNombre, nuevoApellido, nuevaEdad);
+        
+        Persona perso = persoServ.findPersona(nuevaId);
+        return perso;
+    }
+}
+~~~
+
+haciendo las pruebas: 
+
+el primer get esta bien, tiene codigo 200 de que logro conectar, pero no devuelve nada, porque no tengo nada hecho en la base de datos:
+
+![Texto alternativo](/assets/img/postmanCRUD1.png "Título alternativo")
+
+el metodo crear persona necesita que le mandemos una persona por json a traves del body del post y nos regresa un mensaje de que fue enviado correctamente: 
+
+![Texto alternativo](/assets/img/postmanCRUD2.png  "Título alternativo")
+
+creamos unos pocos más con el metodo post
+
+ahora eliminamos un registro con delete:
+
+![Texto alternativo](/assets/img/postmanCRUD3.png  "Título alternativo")
+
+
+ahora hacemos el editar pero en el apartado de postman podemos hacer la peticion de una manera un poco más odenada
+
+![Texto alternativo](/assets/img/postmanCRUD4.png  "Título alternativo")
+
+#### Relaciones con JPA 6 Hibernate: @OneToOne + @OneToMany + @ManyToMany
+
+seguiremos usando el modelo de persona que ya tenemos hecho
+
+creamos el modelo mascota tomando en cuenta que una persona solo puede tner una mascota para poder hacer uso del **OneToOne**
+
+Mascota.java
+~~~ java
+package com.TodoCode.PruebaJPA.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter @Setter
+@Entity
+public class Mascota {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id_mascota;
+    private String nombre;
+    private String especie;
+    private String raza;
+    private String color;
+
+    public Mascota() {
+    }
+
+    public Mascota(Long id_mascota, String nombre, String especie, String raza, String color) {
+        this.id_mascota = id_mascota;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.color = color;
+    }
+}
+~~~
+
+Persona.java
+~~~ java
+package com.TodoCode.PruebaJPA.model;
+
+import jakarta.persistence.Basic;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+@Entity
+public class Persona {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+    private String nombre;
+    private String apellido;
+    private int edad;
+    
+    //aqui le damos una mascota para generar la relacion 1 a 1
+    //y le decimos al programa que esto es una relacion 1 a 1 
+    @OneToOne
+    /*le damos a entender que la columna que creo en la base de datos llamas 
+    "una_mascota_id_mascota" se va a asociar a la columna "id_mascota" de 
+    la base de datos de mascota*/
+    @JoinColumn (name = "una_mascota_id_mascota",referencedColumnName = "id_mascota")
+    private Mascota unaMascota;
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre, String apellido, int edad, Mascota unaMascota) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.unaMascota = unaMascota;
+    }
+
+    
+}
+~~~
+
+siendo asi que cuando corremos el programa nuevamente nos genera la relacion con la forenkey de mascota en la base de datos:
+
+![Texto alternativo](/assets/img/oneToOne1.png "Título alternativo")
+
+generamos los repositorys, y los services de mascota, ya que esta sera una nueva base de datos que llenaremos 
+
+IMascotaService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+
+import com.TodoCode.PruebaJPA.model.Mascota;
+import java.util.List;
+
+public interface IMascotaService {
+    //metodo para traer a todas las mascotas
+    public List<Mascota> getMascotas();
+    
+    //alta mascota
+    public void saveMascota(Mascota masc);
+    
+    //Baja Mascota
+    public void deleteMascota(Long id_mascota);
+    
+    //lectura de un solo objeto
+    public Mascota findMascota(Long id_mascota);
+    
+    //editarMascota
+    public void editMascota(Long idOriginal,
+                            Long id_mascotaNueva,
+                            String nuevoNombre,
+                            String nuevaEspecie,
+                            String nuevaRaza,
+                            String nuevoColor);
+}
+~~~
+
+MascotaService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+
+import com.TodoCode.PruebaJPA.model.Mascota;
+import com.TodoCode.PruebaJPA.repository.IMascotaRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MascotaService implements IMascotaService{
+
+    @Autowired
+    private IMascotaRepository repoMasco;
+    
+    @Override
+    public List<Mascota> getMascotas() {
+        return repoMasco.findAll();
+    }
+
+    @Override
+    public void saveMascota(Mascota masc) {
+        repoMasco.save(masc);
+    }
+
+    @Override
+    public void deleteMascota(Long id_mascota) {
+        repoMasco.deleteById(id_mascota);
+    }
+
+    @Override
+    public Mascota findMascota(Long id_mascota) {
+        return repoMasco.findById(id_mascota).orElse(null);
+    }
+
+    @Override
+    public void editMascota(Long idOriginal, Long id_mascotaNueva, String nuevoNombre, String nuevaEspecie, String nuevaRaza, String nuevoColor) {
+        //busco la mascota original
+        Mascota masco = this.findMascota(idOriginal);
+        
+        //modificando el registro de forma logica
+        masco.setId_mascota(id_mascotaNueva);
+        masco.setNombre(nuevoNombre);
+        masco.setEspecie(nuevaEspecie);
+        masco.setRaza(nuevaRaza);
+        masco.setColor(nuevoColor);
+        
+        //sobreescribiendo el registro 
+        this.saveMascota(masco);
+    }
+    
+}
+~~~
+
+IMascotaRepository.java
+~~~ java
+package com.TodoCode.PruebaJPA.repository;
+
+import com.TodoCode.PruebaJPA.model.Mascota;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IMascotaRepository extends JpaRepository <Mascota,Long>{
+    
+}
+
+~~~
+
+
+todos los endpoints pueden ser gestionados en un solo archivo controller, pero para mantenerlo lo más ordenado posible hare otro llamado MascotaController:
+
+MascotaController.java
+~~~ java
+package com.TodoCode.PruebaJPA.controller;
+
+import com.TodoCode.PruebaJPA.model.Mascota;
+import com.TodoCode.PruebaJPA.service.IMascotaService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MascotaController {
+    //se puede tener mas de un controlador, por ende para tener todo más 
+    //organizado le hacemos uno a mascota
+    
+    @Autowired
+    private IMascotaService mascoServ;
+    //hago regresar todas las mascotas por pura diversion 
+    @GetMapping("/mascotas/traer")
+    public List<Mascota> getMascotas(){
+        return mascoServ.getMascotas();
+    }
+    
+    //para este ejemplo solo voy a hacer el alta para no tener que implemetar 
+    //todos los metods 
+    
+    //agregando una mascota
+    @PostMapping("/mascotas/crear")
+    public String saveMascota(@RequestBody Mascota masco){
+        mascoServ.saveMascota(masco);
+        return "mascota creada con exito";
+    }
+}
+~~~
+
+y esto funciona correctamente en postman, solo para crear una persona se le tiene que dar el valor de id, si ya tenemos a la mascota, o pasarle todos los parametros
+
+![Texto alternativo](/assets/img/oneToOne2.png "Título alternativo")
+
+para poder editar o darle el id de una mascota ya agregada tenemos que cambiar el metodo que hace que una persona sea editada, porque hasta ahora no contemplaba el echo de que pudiera darsele una mascota, aprovechamos para hacer un metodo actualizar más facil 
+
+PersonasController.java
+~~~ java
+package com.TodoCode.PruebaJPA.controller;
+import com.TodoCode.PruebaJPA.model.Persona;
+import com.TodoCode.PruebaJPA.service.IPersonaService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PersonaController {
+    
+    @Autowired
+    IPersonaService persoServ;
+    
+    @GetMapping("/personas/traer")
+    public List<Persona> getPersonas(){
+        return persoServ.getPersonas();
+    }
+    
+    //crear persona
+    @PostMapping("/personas/crear")
+    public String SavePersona(@RequestBody Persona perso){
+        persoServ.savePersona(perso);
+        return "guardado con exito";
+    }
+    
+    //eliminar persona
+    @DeleteMapping("/personas/borrar/{id}")
+    public String deletePersona(@PathVariable Long id){
+        persoServ.deletePersona(id);
+        return "eliminado correctamente";
+    }
+    
+    //edicion
+    @PutMapping("/personas/editar/{id_original}")
+    public Persona editPersona(@PathVariable Long id_original,
+            @RequestParam(required = false, name = "id") Long nuevaId,
+            @RequestParam(required = false, name = "nombre") String nuevoNombre,
+            @RequestParam(required = false, name = "apellido") String nuevoApellido,
+            @RequestParam(required = false, name = "edad") int nuevaEdad){
+        
+        persoServ.editPersona(id_original, nuevaId, nuevoNombre, nuevoApellido, nuevaEdad);
+        
+        Persona perso = persoServ.findPersona(nuevaId);
+        return perso;
+    }
+    
+    //en este el id no debe de cambiar
+    @PutMapping("/personas/editar")
+    public Persona editPersona(@RequestBody Persona per){
+        persoServ.editPersona(per);
+        
+        return persoServ.findPersona(per.getId());
+    }
+}
+
+~~~
+
+IPersonaService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+
+import com.TodoCode.PruebaJPA.model.Persona;
+import java.util.List;
+
+public interface IPersonaService {
+    //haciendo el crud
+    
+    //metodo para traer a todas las personas
+    //lectura
+    public List<Persona> getPersonas();
+    
+    //alta
+    public void savePersona(Persona perso);
+    
+    //baja
+    public void deletePersona(Long id);
+    
+    //lectura de un solo objeto
+    public Persona findPersona(Long id);
+    
+    //editarPersona 
+    
+    //las mejores practicas no deberia poder cambiarse el id, pero puede 
+    //llegar a pasar
+    public void editPersona(Long idOriginal,
+                            Long idNueva,
+                            String nuevoNombre,
+                            String nuevoApellido,
+                            int nuevaEdad);
+
+    public void editPersona(Persona per);
+}
+
+~~~
+
+PersonaService.java
+~~~ java
+package com.TodoCode.PruebaJPA.service;
+import com.TodoCode.PruebaJPA.model.Persona;
+import com.TodoCode.PruebaJPA.repository.IPersonaRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonaService implements IPersonaService{
+    
+    @Autowired
+    private IPersonaRepository persoRepo;
+
+    @Override
+    public List<Persona> getPersonas() {
+        List<Persona> listaPersonas = persoRepo.findAll();
+        return listaPersonas;
+    }
+
+    @Override
+    public void savePersona(Persona perso) {
+        persoRepo.save(perso);
+    }
+
+    @Override
+    public void deletePersona(Long id) {
+        persoRepo.deleteById(id);
+    }
+
+    @Override
+    public Persona findPersona(Long id) {
+        Persona perso = persoRepo.findById(id).orElse(null);
+        return perso;
+    }
+    
+    @Override
+    public void editPersona(Long idOriginal, Long idNueva, String nuevoNombre, String nuevoApellido, int nuevaEdad) {
+        
+        Persona perso = this.findPersona(idOriginal);
+        
+        perso.setId(idNueva);
+        perso.setNombre(nuevoNombre);
+        perso.setApellido(nuevoApellido);
+        perso.setEdad(nuevaEdad);
+        
+        this.savePersona(perso);
+    }
+
+    //ese solo sirve si no se hacen cambios en el id
+    @Override
+    public void editPersona(Persona per) {
+        this.savePersona(per);
+    }
+}
+~~~
+
+hacemos uso de nuestro metodo editar simplificado, porque no estamos cambiando el id
+![Texto alternativo](/assets/img/oneToOne3.png "Título alternativo")
+

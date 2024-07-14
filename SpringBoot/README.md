@@ -7,11 +7,11 @@
 #### Creando una API con Spring Boot
 Primero que nada se debe setear un proyecto de springboot, esto se hace desde una aplicacion web que tiene spring boot, se busca como Spring initializer [esta es la pagina](https://start.spring.io), en el curso pusimos estas dependencias para que funcionara bien: ![dependencias](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/dependencias.png "dependencias")
 
-despues de se debe descargar el proyecto con el boton GENERATE ![Texto alternativo](/assets/img/generate.png "Título alternativo")
+despues de se debe descargar el proyecto con el boton GENERATE ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/generate.png "Título alternativo")
 
 despues de esto se debe descomprimir y abrir el proyecto con un editor de texto que pueda usar java
 
-para el control de los endPoints se genera otra carpeta y le ponemos el nombre de controller ![Texto alternativo](/assets/img/controller.png "Título alternativo")
+para el control de los endPoints se genera otra carpeta y le ponemos el nombre de controller ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/controller.png "Título alternativo")
 
 para la administracion de los endpoints es dento de la carpeta controller que tiene el siguiente codigo:
 

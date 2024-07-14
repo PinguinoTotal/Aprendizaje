@@ -5,13 +5,13 @@
 ### APIs con Spring Boot
 
 #### Creando una API con Spring Boot
-Primero que nada se debe setear un proyecto de springboot, esto se hace desde una aplicacion web que tiene spring boot, se busca como Spring initializer [esta es la pagina](https://start.spring.io), en el curso pusimos estas dependencias para que funcionara bien: ![dependencias](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/dependencias.png "dependencias")
+Primero que nada se debe setear un proyecto de springboot, esto se hace desde una aplicacion web que tiene spring boot, se busca como Spring initializer [esta es la pagina](https://start.spring.io), en el curso pusimos estas dependencias para que funcionara bien: ![dependencias](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/dependencias.png "dependencias")
 
-despues de se debe descargar el proyecto con el boton GENERATE ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/generate.png "Título alternativo")
+despues de se debe descargar el proyecto con el boton GENERATE ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/generate.png "Título alternativo")
 
 despues de esto se debe descomprimir y abrir el proyecto con un editor de texto que pueda usar java
 
-para el control de los endPoints se genera otra carpeta y le ponemos el nombre de controller ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/controller.png "Título alternativo")
+para el control de los endPoints se genera otra carpeta y le ponemos el nombre de controller ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/controller.png "Título alternativo")
 
 para la administracion de los endpoints es dento de la carpeta controller que tiene el siguiente codigo:
 
@@ -136,7 +136,7 @@ para utilizar el post es necesario utilizar otros metodos:
 
 esta es la estructura que toman los archivos:
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/distribucionPost.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/distribucionPost.png "Título alternativo")
 
 primero creamos una clase la cual va a ser vir apra mandar objetos de ese tipo
 
@@ -200,7 +200,7 @@ public class applicacionController {
 
 luego con postman verificamos que los post recibidos de manera correcta 
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/postman1.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/postman1.png "Título alternativo")
 
 
 para usar el response body que sera la respuesta de nuestra peticion que nos hagan por get es de esta manera:
@@ -428,11 +428,11 @@ el mas comun de los modelos de capas tiene (todos van en minusculas en el proyec
 
 debe de quedar de esta manera:
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/arquitectura%20de%20capas.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/arquitectura%20de%20capas.png "Título alternativo")
 
 quedando masomenos de esta manera
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/arquitecturaDeCapasRelleno.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/arquitecturaDeCapasRelleno.png "Título alternativo")
 
 se deben implementar los metodos a traves de interfaces 
 
@@ -555,7 +555,7 @@ cada capa debe estar desacoplada de las demas pero puedan llamarse entre si, tod
 
 la estructura es asi:
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/intyeccionDeDependenciasCONSySET.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/intyeccionDeDependenciasCONSySET.png "Título alternativo")
 
 
 y se implementa de esta manera:
@@ -591,7 +591,7 @@ public class ServicioLavado {
 
 tambien la inyeccion de dependencias puede hacerse mediante autowire que se hace de esta manera, este es otro nuevo proyecto:
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/inyeccionAutowirex.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/inyeccionAutowirex.png "Título alternativo")
 
 Posteo.java
 ~~~ java
@@ -695,7 +695,7 @@ public class aplicacionController {
 
 primero hacemos la implementacion de dependencias en SpringBoot mediante el SpirngInitializr, 
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/configuracionHibernateJPA.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/configuracionHibernateJPA.png "Título alternativo")
 
 *nota: h2 no es tan necesario porque nos permite hacer una mini base de datos que ya podemos hacer con myphpAdmin*
 
@@ -703,7 +703,7 @@ levantamos el proyecto y vamos a la base de datos, creamos una nueva base de dat
 
 luego levantamos el proyecto en java y hacemos una configuracion en el archivo **aplication.properties** 
 
-![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoothttps://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/applicationproperties.png "Título alternativo")
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/applicationproperties.png "Título alternativo")
 
 ~~~ 
 spring.jpa.hibernate.ddl-auto=update

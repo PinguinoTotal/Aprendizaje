@@ -5,7 +5,7 @@
 ### APIs con Spring Boot
 
 #### Creando una API con Spring Boot
-Primero que nada se debe setear un proyecto de springboot, esto se hace desde una aplicacion web que tiene spring boot, se busca como Spring initializer [esta es la pagina](https://start.spring.io), en el curso pusimos estas dependencias para que funcionara bien: ![dependencias]([/assets/img/dependencias.png] "dependencias")
+Primero que nada se debe setear un proyecto de springboot, esto se hace desde una aplicacion web que tiene spring boot, se busca como Spring initializer [esta es la pagina](https://start.spring.io), en el curso pusimos estas dependencias para que funcionara bien: ![dependencias]([/assets/img/dependencias.png](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/dependencias.png) "dependencias")
 
 despues de se debe descargar el proyecto con el boton GENERATE ![Texto alternativo](/assets/img/generate.png "Título alternativo")
 

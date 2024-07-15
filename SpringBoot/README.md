@@ -1421,3 +1421,111 @@ public class PersonaService implements IPersonaService{
 hacemos uso de nuestro metodo editar simplificado, porque no estamos cambiando el id
 ![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/oneToOne3.png "Título alternativo")
 
+#### One to Many
+
+se va a trabajar sobre el programa que ya se tenia, ahora tenemos que una persona puede tener muchas mascotas
+
+recordar que la foreinKey va en la base de datos, pero en la logica la referencia esta en la clase que tiene varios de estos elementos como suyos (siendo esto una lista), en este caso PERSONA tiene muchas mascotas
+
+Persona.java
+~~~ java
+package com.TodoCode.PruebaJPA.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+@Entity
+public class Persona {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+    private String nombre;
+    private String apellido;
+    private int edad;
+    
+    //ahora como puedo tener mcuhas mascotas
+    //puedo tener una lista de mascotas, por el modelo OneToMany
+    @OneToMany
+    //colocandole la anotation OneToMany tenemos una relacion unidireccional 
+    private List<Mascota> listaMascotas;
+
+    public Persona() {
+    }
+
+    public Persona(Long id, String nombre, String apellido, int edad, List<Mascota> listaMascotas) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.listaMascotas = listaMascotas;
+    }
+~~~
+
+Mascota.java
+~~~ java
+package com.TodoCode.PruebaJPA.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter @Setter
+@Entity
+public class Mascota {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id_mascota;
+    private String nombre;
+    private String especie;
+    private String raza;
+    private String color;
+    
+    //tambien en este lado se puede poner la anotation many to one para
+    //tener una referencia bidireccional y que la mascota tenga una refrencia de 
+    //quien es su persona 
+    /*
+    @ManyToOne
+    private Persona miPersona;
+    */
+
+    public Mascota() {
+    }
+
+    public Mascota(Long id_mascota, String nombre, String especie, String raza, String color) {
+        this.id_mascota = id_mascota;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.color = color;
+    }
+    
+    
+}
+~~~
+
+todos los demas archivos se quedan igual, ya que al recibir o trabajar directamente con objetos persona no se necesita hacer una ediciion tan agresiva
+
+se nos crea una tabla intermedia, que por lo general se usa en relaciones many to many, pero este sabe como implementarla como un one to may 
+
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/oneToMany1.png "Título alternativo")
+
+despues de crear unas mascotas en postman, creamos una persona y le pasamos una lista con los id_mascota que son sus masoctas, de esta manera:
+
+![Texto alternativo](https://github.com/PinguinoTotal/Aprendizaje/blob/master/SpringBoot/assets/img/oneToMany2.png "Título alternativo")
+
+#### Many to Many
+
+para hacer el many to many, solo es necesario poner de los dos lados de la logica Persona.java y Mascota.java una referencia de cada uno de los objetos del otro ponerle el anotattion **@ManyToMany** y listo
+

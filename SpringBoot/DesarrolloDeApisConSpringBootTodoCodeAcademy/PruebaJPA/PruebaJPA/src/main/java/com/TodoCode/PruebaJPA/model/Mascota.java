@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +19,14 @@ public class Mascota {
     private String especie;
     private String raza;
     private String color;
+    
+    //tambien en este lado se puede poner la anotation many to one para
+    //tener una referencia bidireccional y que la mascota tenga una refrencia de 
+    //quien es su persona 
+    /*
+    @ManyToOne
+    private Persona miPersona;
+    */
 
     public Mascota() {
     }

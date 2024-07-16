@@ -1541,4 +1541,8 @@ pues es la respuesta a el meme de "en mi computadora si funciona" es empaquetar 
 s el uso de "contenedores" como los que van en los barcos, ya que puede "vijar" en donde sea
 
 
+
 ### Deploy en SpringBoot
+
+### Notas
+recordar que las relaciones entre clases se hacen a traves de clases o colecciones, cuando es 1 a 1 es con clases y los demas con con colecciones

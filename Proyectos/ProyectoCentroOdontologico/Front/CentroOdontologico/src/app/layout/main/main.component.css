@@ -1,0 +1,7 @@
+.main{
+    @apply bg-blue_green-500 h-7 auto-cols-min h-screen
+}
+
+.main_pressed{
+    @apply hidden
+}

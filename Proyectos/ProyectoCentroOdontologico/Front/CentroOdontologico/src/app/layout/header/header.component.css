@@ -1,0 +1,15 @@
+.header{
+    @apply flex bg-blue_green-200 w-full justify-between h-16 items-center px-10 text-2xl
+}
+
+.header_pressed{
+    @apply hidden;
+}
+
+.header__userInfo{
+    @apply flex
+}
+
+.usserInfo_letter{
+    @apply flex bg-black text-white h-9 w-9 ml-3 justify-center items-center rounded-full
+}

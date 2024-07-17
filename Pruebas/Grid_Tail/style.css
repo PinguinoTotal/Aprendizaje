@@ -1,0 +1,13 @@
+.grid-cointainer{
+    display: grid;
+    grid-template-rows: 40px auto;
+    height: 100vh;
+}
+
+.caja{
+    background-color: aquamarine;
+}
+
+.caja2{
+    background-color: aqua;
+}

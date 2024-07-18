@@ -1,4 +1,26 @@
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --color-1: #6FE3DB;
+    --color-2: #6FE3B3;
+    --color-3: #6FC6E3;
+    --color-4: #7AC5DF;
+    --color-5: #6FA1E3;
+    --color-6: #6F7DE3;
+    --myBlack: black;
+    --myWhite: white;
+
+    /*header values*/
+    --paddingx_header: 40px;
+    --font-size_header: 35px;
+
+    /*header transition*/
+    --transition_time: 150ms;
+    
+
+    /*menu*/
+}

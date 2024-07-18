@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, DoCheck, inject, OnInit } from '@angular/core';
 import { MenuComponent } from '../../layout/menu/menu.component';
 import { HeaderComponent } from "../../layout/header/header.component";
 import { MainComponent } from "../../layout/main/main.component";
+import { PhoneMenuPressedService } from '../../services/phone-menu-pressed.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +11,15 @@ import { MainComponent } from "../../layout/main/main.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  presionado:boolean = false;
+export class AppComponent implements DoCheck, OnInit{
+  pressedServise = inject(PhoneMenuPressedService);
+  pressed:boolean = false;
 
-  abrirPresionado():void{
-    this.presionado = !this.presionado;
+  ngOnInit(): void {
+    this.pressed = this.pressedServise.isPressed();
+  }
+
+  ngDoCheck(): void {
+    this.pressed = this.pressedServise.isPressed();
   }
 }

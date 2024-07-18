@@ -1,13 +1,12 @@
-<section class="header" [class.header_pressed]="pressed">
+<section class="header">
     <div class="header__menu-image">
-        <button (click)="toggleMenu()">
+        <button (click)="showMenu()" [class.header__menu-pressed]="pressed">
             <i class="fa-solid fa-bars"></i>
         </button>
-        
     </div>
 
-    <div class="header__userInfo">
-        <p class="userInfo__name">Raul</p>
+    <div class="header__userInfo" [class.header__userInfo-pressed]="pressed">
+        <p class="userInfo__name">{{nombreAMostrar}}</p>
         <div class="usserInfo_letter"><p>R</p></div>
     </div>
 </section>

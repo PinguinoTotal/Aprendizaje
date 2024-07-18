@@ -14,4 +14,8 @@ export class PhoneMenuPressedService {
   public isPressed():boolean{
     return this.pressed;
   }
+
+  public setPressed(state:boolean):void{
+    this.pressed = state;
+  }
 }

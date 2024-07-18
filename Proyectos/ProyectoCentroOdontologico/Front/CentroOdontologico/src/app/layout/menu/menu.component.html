@@ -1,6 +1,6 @@
-<div class="body" [class.body_pressed] = "pressed">
+<div class="menu">
     <div class="miniHeader">
-        <button (click)="toggleMenu()" class="miniHeader__back">
+        <button class="miniHeader__back" [class.miniHeader__back-pressed]="noPressed" (click)="showMenu()">
             <i class="fa-solid fa-arrow-left"></i>
         </button>
 
@@ -9,7 +9,8 @@
                 <i class="fa-solid fa-tooth"></i>
             </div>
             <div class="miniHeader__text">
-                <p>Consultorio Odontologico</p>
+                <p>Consultorio</p>
+                <p>Odontologico</p>
             </div>
         </div>
     </div>

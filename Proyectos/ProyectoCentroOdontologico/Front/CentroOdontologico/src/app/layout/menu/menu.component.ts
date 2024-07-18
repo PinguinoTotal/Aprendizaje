@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { PhoneMenuPressedService } from '../../services/phone-menu-pressed.service';
 
 @Component({
@@ -9,19 +9,19 @@ import { PhoneMenuPressedService } from '../../services/phone-menu-pressed.servi
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
-  toggle = inject(PhoneMenuPressedService);
-  pressed = this.toggle.isPressed();
-
-  constructor(){}
-  ngOnInit(): void {
-    this.pressed = this.toggle.isPressed();
-  }
+  pressedService = inject(PhoneMenuPressedService);
+  noPressed:boolean = false;
 
   ngDoCheck(): void {
-    this.pressed = this.toggle.isPressed();
+    this.noPressed = !this.pressedService.isPressed();
   }
 
-  toggleMenu():void{
-    this.toggle.changeStatePressed();
+  ngOnInit(): void {
+    this.noPressed = !this.pressedService.isPressed();
   }
+
+  showMenu():void{
+    this.pressedService.changeStatePressed();
+  }
+
 }

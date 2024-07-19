@@ -1,0 +1,41 @@
+.dropdown{
+    display: grid;
+    grid-template-rows: auto 0px;
+    margin-top: 25px;
+    padding-left: 20px;
+    transition: 150ms;
+}
+
+.dropdown-open{
+    grid-template-rows: auto 80px;
+}
+
+.dropdown__button{
+    display: flex;
+    font-size: 25px;
+    color: var(--myWhite);
+}
+
+.button__ico-reference{
+    margin-right: 15px;
+}
+
+.button__title{
+    margin-right: 15px;
+}
+
+.hidde{
+    display: block;
+}
+
+.container{
+    padding-left: 10px;
+    overflow: hidden;
+    color: var(--myWhite);
+}
+
+.election{
+    height: 40px;
+    line-height: 40px;
+}
+

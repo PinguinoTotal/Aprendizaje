@@ -1,10 +1,17 @@
 package com.Odontelx.CentroOdonotologico.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter @Setter
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
     private String nombreUsuario;
     private String contrasena;

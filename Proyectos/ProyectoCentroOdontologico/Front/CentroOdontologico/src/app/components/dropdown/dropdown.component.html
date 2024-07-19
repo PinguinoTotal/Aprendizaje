@@ -1,1 +1,31 @@
-<p>dropdown works!</p>
+<div class="dropdown" [class.dropdown-open]="open">
+    <button class="dropdown__button" (click)="openDropdown()">
+        <div class="button__ico-reference">
+            <i class={{icon}}></i>
+        </div>
+        <div class="button__title">
+            <h4>{{title}}</h4>
+        </div>
+        <div class="button__ico" [class.button__ico-open]="open">
+            <div [class.hidden]="open">
+                <i class="fa-solid fa-caret-right"></i>
+            </div>
+            <div [class.hidden]="noOpen">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+        </div>
+    </button>
+
+
+    <div class="container">
+        <ul>
+            <li class="election">
+                <a href={{showLink}}>{{eleccionMinusculas}}</a>
+            </li>
+            <li class="election">
+                <a href={{createLink}}>{{eleccionUnidad}}</a>
+                
+            </li>
+        </ul>
+    </div>
+</div>

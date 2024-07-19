@@ -1,10 +1,11 @@
 import { Component, inject} from '@angular/core';
 import { PhoneMenuPressedService } from '../../services/phone-menu-pressed.service';
+import { DropdownComponent } from "../../components/dropdown/dropdown.component";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [],
+  imports: [DropdownComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })

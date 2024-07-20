@@ -13,31 +13,37 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
+@Setter @Getter
 public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_turno;
+    private Long id_turno;
     @Temporal(TemporalType.DATE)
     private Date fechaTurno;
     private String hora_turno;
     private String afeccion;
     
+    //relaciones
     @ManyToOne
-    @JoinColumn(name = "id_turno")
+    @JoinColumn(name = "odontologo_id")
     private Odontologo odonto;
     
     @ManyToOne
-    @JoinColumn(name = "id_turno2")
+    @JoinColumn(name = "paciente_id")
     private Paciente pacien;
 
     public Turno() {
     }
 
-    public Turno(int id_turno, Date fechaTurno, String hora_turno, String afeccion) {
-        this.id_turno = id_turno;
+    public Turno(Date fechaTurno, String hora_turno, String afeccion, Odontologo odonto, Paciente pacien) {
         this.fechaTurno = fechaTurno;
         this.hora_turno = hora_turno;
         this.afeccion = afeccion;
+        this.odonto = odonto;
+        this.pacien = pacien;
     }
+
+    
+    
+    
 }

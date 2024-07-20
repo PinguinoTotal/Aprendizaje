@@ -1,30 +1,34 @@
 package com.Odontelx.CentroOdonotologico.model;
 
 import jakarta.persistence.Entity;
-import java.util.Date;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Entity
-@Getter @Setter
-public class Responsable extends Persona {
-    //private int id_responsable;
+@Setter @Getter
+public class Responsable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_responsable;
     private String tipoResp;
     
-    //relaciones 
-    //no tiene porque es unidireccional desde el lado del paciente
+    //relaciones
+    //un responsable tiene un objeto persona asociado
+    @OneToOne
+    private Persona persona;
 
     public Responsable() {
     }
 
-    public Responsable(String tipoResp, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Responsable(Long id_responsable, String tipoResp, Persona persona) {
         this.tipoResp = tipoResp;
+        this.persona = persona;
     }
-
-    
-
-    
 
     
     

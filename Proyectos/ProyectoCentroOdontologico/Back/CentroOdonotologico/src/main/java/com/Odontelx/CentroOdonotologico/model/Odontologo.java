@@ -1,48 +1,51 @@
 package com.Odontelx.CentroOdonotologico.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
-import java.util.Date;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Entity
-@Getter @Setter
-public class Odontologo extends Persona{
-    //private int id_odontologo;
+@Setter @Getter
+public class Odontologo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_odontologo;
     private String especialidad;
     
-    //relaciones 
-    //un odontologo tiene una lista de turnos
-    @OneToMany(mappedBy = "odonto")
-    //mapea mediante el objeto odonto que tine del otro lado de la base de datos
+    //Relaciones
+    //tendremos un objeto Persona asociado 
+    @OneToOne
+    private Persona persona;
+    //cada Odontologo puede tener muchso turnos
+    @OneToMany(mappedBy ="odonto" )
     private List<Turno> listaTurnos;
-    //un odontologo tiene un usuario
+    //cada Odontologo puede tener un usuario
     @OneToOne
     private Usuario unUsuario;
-    //un odontologo tiene 
+    //cada odontologo puede tener un horario
     @OneToOne
-    private Horario unHoraraio;
+    private Horario unHorario;
 
     public Odontologo() {
     }
 
-    public Odontologo(String especialidad, List<Turno> listaTurnos, Usuario unUsuario, Horario unHoraraio, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(id, dni, nombre, apellido, telefono, direccion, fecha_nac);
+    public Odontologo(String especialidad, Persona persona, List<Turno> listaTurnos, Usuario unUsuario, Horario unHorario) {
         this.especialidad = especialidad;
+        this.persona = persona;
         this.listaTurnos = listaTurnos;
         this.unUsuario = unUsuario;
-        this.unHoraraio = unHoraraio;
+        this.unHorario = unHorario;
     }
 
     
 
     
-
     
-
     
 }

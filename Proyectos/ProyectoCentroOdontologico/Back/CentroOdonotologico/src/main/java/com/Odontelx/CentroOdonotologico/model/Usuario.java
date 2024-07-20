@@ -8,22 +8,26 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
+@Setter @Getter
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_usuario;
-    private String nombreUsuario;
-    private String contrasena;
+    private Long id_usuario;
+    private String nombre_usuario;
+    private String contrasenia;
     private String rol;
+   
 
     public Usuario() {
     }
 
-    public Usuario(int id_usuario, String nombreUsuario, String contrasena, String rol) {
-        this.id_usuario = id_usuario;
-        this.nombreUsuario = nombreUsuario;
-        this.contrasena = contrasena;
+    public Usuario(Long id_usuario, String nombre_usuario, String contrasenia, String rol) {
+        this.nombre_usuario = nombre_usuario;
+        this.contrasenia = contrasenia;
         this.rol = rol;
     }
+
+    
+    
+    
 }

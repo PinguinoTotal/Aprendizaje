@@ -1,9 +1,9 @@
 package com.Odontelx.CentroOdonotologico.repository;
-import com.Odontelx.CentroOdonotologico.model.Persona;
+import com.Odontelx.CentroOdonotologico.model.Turno;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IPersonaRepository extends JpaRepository<Persona, Long> {
+public interface ITurnoRepository extends JpaRepository<Turno, Long> {
     
 }

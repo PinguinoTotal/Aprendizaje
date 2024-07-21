@@ -18,7 +18,7 @@ public class HorarioService implements IHorarioService{
     }
     
     @Override
-    public void saveHorario(Horario hor) {
+    public void saveHorario(Horario hor){
         horarioRepo.save(hor);
     }
 
@@ -29,10 +29,7 @@ public class HorarioService implements IHorarioService{
 
     @Override
     public void editHorario(Horario nuevHor) {
-        Horario horarioEdit = this.findHorario(nuevHor.getId_horario());
-        horarioEdit.setHorario_inicio(nuevHor.getHorario_inicio());
-        horarioEdit.setHoarario_fin(nuevHor.getHoarario_fin());
-        this.saveHorario(horarioEdit);
+        this.saveHorario(nuevHor);
     }
 
     @Override

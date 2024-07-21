@@ -19,11 +19,6 @@ public class Horario {
     public Horario() {
     }
 
-    public Horario(String horario_inicio, String hoarario_fin) {
-        this.horario_inicio = horario_inicio;
-        this.hoarario_fin = hoarario_fin;
-    }
-
     public Horario(Long id_horario, String horario_inicio, String hoarario_fin) {
         this.id_horario = id_horario;
         this.horario_inicio = horario_inicio;

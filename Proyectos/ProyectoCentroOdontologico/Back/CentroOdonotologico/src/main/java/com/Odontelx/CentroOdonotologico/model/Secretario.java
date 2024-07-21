@@ -27,13 +27,12 @@ public class Secretario {
     public Secretario() {
     }
 
-    public Secretario(String sector, Persona persona, Usuario unUsuario) {
+    public Secretario(Long id_secretario, String sector, Persona persona, Usuario unUsuario) {
+        this.id_secretario = id_secretario;
         this.sector = sector;
         this.persona = persona;
         this.unUsuario = unUsuario;
     }
-
-    
     
     
 }

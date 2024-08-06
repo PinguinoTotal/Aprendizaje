@@ -7,4 +7,4 @@ aprendere con este tipo de videos:
 
 se hace en un nuevo proyecto mvc en java Visual studio(el morado), esto hace que nos de una plantilla de carpetas para poder hacer el sistema mvc 
 
-![Crear proyecto mvc](/assets/crearMvc.jpg)
+![Crear proyecto mvc](https://github.com/PinguinoTotal/Aprendizaje/blob/c%23/C%23/assets/crearMvc.jpg)

@@ -1,0 +1,1 @@
+# Aqui va mi propuesta del crm del trabajo, para que todo se vea más bonito y se haga con java, angular y spring boot

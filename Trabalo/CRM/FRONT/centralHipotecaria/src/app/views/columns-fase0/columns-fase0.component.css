@@ -1,0 +1,15 @@
+.main{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "sidebar content content"
+    "footer footer footer";;
+}
+
+.sideBar{
+    grid-column: 1/4
+}
+
+.workFlow{
+    grid-column: 4/8;
+}

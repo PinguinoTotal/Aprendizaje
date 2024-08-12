@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\models\\races.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\models\\races.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\models\\racecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\models\\racecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\models\\club.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\data\\enum\\clubcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\data\\enum\\clubcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|c:\\users\\abraham\\desktop\\aprendizaje\\c#\\rungroupwebapp\\rungroupwebapp\\rungroupwebapp\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58706C97-2733-4184-AB0A-2DCD296C2D7B}|RunGroupWebApp\\RunGroupWebApp.csproj|solutionrelative:rungroupwebapp\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,41 +39,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "RunGroupWebApp\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "RunGroupWebApp\\Models\\ErrorViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "RaceCategory.cs",
+              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\RaceCategory.cs",
+              "RelativeDocumentMoniker": "RunGroupWebApp\\Models\\RaceCategory.cs",
+              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\RaceCategory.cs",
+              "RelativeToolTip": "RunGroupWebApp\\Models\\RaceCategory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T21:48:33.829Z",
+              "WhenOpened": "2024-08-06T23:54:22.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "RunGroupWebApp\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "RunGroupWebApp\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Title": "Races.cs",
+              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\Races.cs",
+              "RelativeDocumentMoniker": "RunGroupWebApp\\Models\\Races.cs",
+              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\Races.cs",
+              "RelativeToolTip": "RunGroupWebApp\\Models\\Races.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T21:48:13.548Z",
+              "WhenOpened": "2024-08-06T23:49:37.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClubCategory.cs",
+              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Data\\Enum\\ClubCategory.cs",
+              "RelativeDocumentMoniker": "RunGroupWebApp\\Data\\Enum\\ClubCategory.cs",
+              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Data\\Enum\\ClubCategory.cs",
+              "RelativeToolTip": "RunGroupWebApp\\Data\\Enum\\ClubCategory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T23:01:17.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Program.cs",
-              "RelativeDocumentMoniker": "RunGroupWebApp\\Program.cs",
-              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Program.cs",
-              "RelativeToolTip": "RunGroupWebApp\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Club.cs",
+              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\Club.cs",
+              "RelativeDocumentMoniker": "RunGroupWebApp\\Models\\Club.cs",
+              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\Club.cs",
+              "RelativeToolTip": "RunGroupWebApp\\Models\\Club.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T21:46:43.442Z",
+              "WhenOpened": "2024-08-06T22:52:45.432Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "RunGroupWebApp\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\AppUser.cs",
+              "RelativeToolTip": "RunGroupWebApp\\Models\\AppUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T22:46:58.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "RunGroupWebApp\\Models\\Address.cs",
+              "ToolTip": "C:\\Users\\abraham\\Desktop\\Aprendizaje\\C#\\RunGroupWebApp\\RunGroupWebApp\\RunGroupWebApp\\Models\\Address.cs",
+              "RelativeToolTip": "RunGroupWebApp\\Models\\Address.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T22:42:44.984Z"
             }
           ]
         }

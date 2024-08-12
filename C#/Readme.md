@@ -8,3 +8,10 @@ aprendere con este tipo de videos:
 se hace en un nuevo proyecto mvc en java Visual studio(el morado), esto hace que nos de una plantilla de carpetas para poder hacer el sistema mvc 
 
 ![Crear proyecto mvc](https://github.com/PinguinoTotal/Aprendizaje/blob/c%23/C%23/assets/crearMvc.jpg)
+
+
+para poder hacer un Model se tiene que hacer dentro de la carpeta models que nos da el programa:
+
+![Crear un modelo](https://github.com/PinguinoTotal/Aprendizaje/blob/c%23/C%23/assets/models.jpg)
+
+luego agregar -> nuevo elemento y ya se hace una clase en #C

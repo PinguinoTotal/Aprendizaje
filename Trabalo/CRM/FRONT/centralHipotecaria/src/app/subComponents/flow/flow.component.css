@@ -1,0 +1,11 @@
+.flow{
+    background-color: lightcoral;
+    width: 200px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 100%;
+}
+
+.flow__name{
+    text-align: center;
+}

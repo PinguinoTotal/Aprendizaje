@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    align-items: center;
+}
+
+.header__logo{
+    font-size: 35px;
+}
+
+.header__count{
+    display: flex;
+    height: 25px;
+}
+
+.icon{
+    font-size: 25px;
+}
+
+.count__notifications{
+    display: flex;
+}
+
+.notifications__circle{
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 99px;
+    line-height: 20px;
+    text-align: center;
+}

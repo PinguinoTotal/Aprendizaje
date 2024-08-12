@@ -1,0 +1,28 @@
+.body{
+    background-color: lightgreen;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+
+.flow{
+    
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.flow__container{
+    box-sizing: border-box;
+    background-color: lightpink;
+    padding-top: 10px;
+    height: 100%;
+}
+
+.flow__title{
+    border-bottom: 1px solid black;
+}

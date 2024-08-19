@@ -8,6 +8,10 @@
     height: 100%;
 }
 
+.black__noDisplay{
+    display: none;
+}
+
 .black__container{
     box-sizing: border-box;
     background-color: rgb(184, 187, 190);
@@ -38,10 +42,12 @@
     "firstName firstName firstName"
     "lastName lastName lastName"
     "age money perfil"
-    "value hook what"
+    "value hook married"
+    "what what what"
     "mail mail mail"
     "phone phone phone"
     ". cancelar agregar";
+    grid-template-rows: repeat(8, 1fr);
     justify-content: center;
     margin-top: 10px;
 }
@@ -75,6 +81,10 @@
 
 .what{
     grid-area: what;
+}
+
+.married{
+    grid-area: married;
 }
 
 .mail{
